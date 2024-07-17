@@ -22,6 +22,7 @@
       width: 100%;
       padding: 10px 16px;
       box-sizing: border-box;
+      z-index: 1000; /* Ensure navbar is on top */
     }
 
     .logo {
@@ -49,14 +50,14 @@
       text-decoration: none;
     }
 
-    .nav-items li a:hover:not(.active){
+    .nav-items li a:hover:not(.active) {
       background-color: #111;
     }
 
     .active {
       background-color: #04AA6D;
     }
- 
+
     /* Main content styles */
     .info {
       background-color: lightpink;
@@ -82,9 +83,9 @@
     }
 
     .gallery img {
-      margin: 15px; 
+      margin: 15px;
       max-width: 100%; /* Ensure images don't exceed container width */
-      height: 900; /* Maintain aspect ratio */
+      height: auto; /* Maintain aspect ratio */
     }
 
     .button-container {
@@ -133,20 +134,25 @@
       opacity: 1;
       right: 0;
     }
-    .testing{
-      display:inline-flex;
+    
+    .testing {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center items for smaller screens */
     }
+
     /* About us section styles */
     .About_us {
       background-color: lightblue;
       border-radius: 12px;
-      width: 865px;
+      width: 90%; /* Adjust width to fit on mobile screens */
+      max-width: 865px; /* Max width for larger screens */
       text-align: left;
       font-family: Arial, sans-serif;
       padding: 16px; /* Adjust padding */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin:10px;
-      }
+      margin: 10px;
+    }
 
     .About_us h1 {
       margin-top: 0;
@@ -161,10 +167,11 @@
     .Contact_info {
       background-color: bisque;
       margin: 10px; /* Adjust margin */
-      padding: 16px 0; /* Adjust padding */
+      padding: 16px; /* Adjust padding */
       border-radius: 12px;
-      width: 965px;
-      max-height: 550px;
+      width: 90%; /* Adjust width to fit on mobile screens */
+      max-width: 965px; /* Max width for larger screens */
+      box-sizing: border-box;
     }
 
     .h1contact {
@@ -196,15 +203,16 @@
       font-size: 50px;
       margin-bottom: 10px; /* Space between icon and text */
     }
-    <!--/* Media queries */
+    
+    /* Media queries */
     @media only screen and (min-width: 1024px) {
       .navbar {
-        padding: 10px 10px; /* Adjust padding */
+        padding: 10px 16px; /* Adjust padding */
       }
 
       .gallery {
-        padding: 10px;
-        margin: 10px;
+        padding: 20px;
+        margin: 20px;
       }
 
       .icon-container {
@@ -232,21 +240,26 @@
       .icon i {
         font-size: 40px; /* Decrease icon size for smaller screens */
       }
-      .icon-container{
+
+      .icon-container {
         flex-direction: column;
       }
-      .testing{
+
+      .testing {
         flex-direction: column;
+        align-items: center; /* Center align items for mobile view */
       }
-      .About_us{
-        width: 615px;
+
+      .About_us {
+        width: 100%; /* Ensure full width on mobile */
+        max-width: none; /* Remove max-width constraint */
       }
-      .Contact_info{
-        width: 645px;
-        
+
+      .Contact_info {
+        width: 100%; /* Ensure full width on mobile */
+        max-width: none; /* Remove max-width constraint */
       }
-    } 
-    
+    }
   </style>
 </head>
 <body>
@@ -290,7 +303,7 @@
   
   <div class="Contact_info">
     <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
-    <hr color="black" width="400px" align="center">
+    <hr color="black" width="90%" align="center">
     <div class="icon-container">
       <div class="icon">
         <i class="fa fa-phone"></i>
@@ -307,9 +320,5 @@
     </div>
   </div>
 </div>
-
-
-
-
 </body>
 </html>
