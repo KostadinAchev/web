@@ -10,7 +10,6 @@
       background-color: #333;
       margin: 0;
       font-family: Arial, sans-serif;
-      color: white;
     }
 
     /* Navbar styles */
@@ -23,11 +22,10 @@
       width: 100%;
       padding: 10px 16px;
       box-sizing: border-box;
-      z-index: 1000;
     }
 
     .logo {
-      margin-right: auto;
+      margin-right: auto; /* Pushes nav-items to the center */
     }
 
     .nav-items {
@@ -36,7 +34,7 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      flex-grow: 1;
+      flex-grow: 1; /* Allow this to grow and take available space */
     }
 
     .nav-items li {
@@ -51,7 +49,7 @@
       text-decoration: none;
     }
 
-    .nav-items li a:hover:not(.active) {
+    .nav-items li a:hover:not(.active){
       background-color: #111;
     }
 
@@ -63,6 +61,7 @@
     .info {
       background-color: lightpink;
       text-align: center;
+      font-family: Arial, sans-serif;
       padding: 80px 16px 16px;
       margin-top: 58px;
     }
@@ -72,7 +71,7 @@
       text-transform: capitalize;
       font-weight: bold;
       text-decoration: underline;
-      margin: 0;
+      margin: 0; /* Remove margin */
     }
 
     .gallery {
@@ -83,16 +82,15 @@
     }
 
     .gallery img {
-      margin: 15px;
-      height: 650px;
-      width: auto; /* Maintain aspect ratio */
-      max-width: 100%;
+      margin: 15px; 
+      max-width: 100%; /* Ensure images don't exceed container width */
+      height: 900; /* Maintain aspect ratio */
     }
 
     .button-container {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      text-align: center; /* Center the button container */
+      margin-top: 20px; /* Add some margin to separate from the images */
+      margin-bottom: 20px; /* Add bottom margin */
     }
 
     .buttons {
@@ -107,8 +105,8 @@
       transition: all 0.5s;
       cursor: pointer;
       margin: 5px;
-      text-decoration: none;
-      color: white;
+      text-decoration: none; /* Remove underline from link */
+      color: white; /* Ensure the text color is white */
     }
 
     .button1 span {
@@ -135,23 +133,20 @@
       opacity: 1;
       right: 0;
     }
-
-    .testing {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .testing{
+      display:inline-flex;
     }
-
     /* About us section styles */
     .About_us {
       background-color: lightblue;
       border-radius: 12px;
+      width: 865px;
       text-align: left;
-      padding: 16px;
+      font-family: Arial, sans-serif;
+      padding: 16px; /* Adjust padding */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      margin: 10px;
-    }
+      margin:10px;
+      }
 
     .About_us h1 {
       margin-top: 0;
@@ -165,44 +160,46 @@
     /* Contact info section styles */
     .Contact_info {
       background-color: bisque;
+      margin: 10px; /* Adjust margin */
+      padding: 16px 0; /* Adjust padding */
       border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      margin: 10px;
-      text-align: center;
+      width: 965px;
+      max-height: 550px;
     }
 
     .h1contact {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 16px 0 0; /* Adjust padding */
       font-size: 22px;
       font-weight: lighter;
     }
 
     /* Icon container styles */
     .icon-container {
+      background-color: bisque;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: space-around; /* Space between icons */
+      align-items: center; /* Center icons vertically */
       padding: 20px;
+      margin: 20px;
     }
 
     .icon {
       text-align: center;
       color: #333;
       font-size: 24px;
-      margin: 10px;
     }
 
     .icon i {
       font-size: 50px;
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* Space between icon and text */
     }
-
-    /* Media queries */
+    <!--/* Media queries */
     @media only screen and (min-width: 1024px) {
       .navbar {
-        padding: 10px 10px;
+        padding: 10px 10px; /* Adjust padding */
       }
 
       .gallery {
@@ -217,99 +214,102 @@
 
     @media only screen and (max-width: 768px) {
       .info {
-        padding-top: 120px;
+        padding-top: 120px; /* Adjust padding for info section */
       }
 
       .customh1 {
-        font-size: 24px;
+        font-size: 24px; /* Decrease font size for customh1 */
       }
 
       .gallery img {
-        margin-bottom: 10px;
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
       }
 
       .icon {
-        font-size: 20px;
+        font-size: 20px; /* Decrease icon size for smaller screens */
       }
 
       .icon i {
-        font-size: 40px;
+        font-size: 40px; /* Decrease icon size for smaller screens */
       }
-
-      .icon-container {
+      .icon-container{
         flex-direction: column;
       }
-
-      .testing {
+      .testing{
         flex-direction: column;
       }
-
-      .About_us,
-      .Contact_info {
-        width: 100%;
-        margin: 10px 0;
+      .About_us{
+        width: 615px;
       }
-    }
+      .Contact_info{
+        width: 645px;
+        
+      }
+    } 
     
   </style>
 </head>
 <body>
-  <div class="navbar">
+<div class="navbar">
     <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
     <ul class="nav-items">
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      <li><a href="Info.html">Information</a></li>
-      <li><a href="Buildings.html">Buildings</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Info.html">Information</a></li>
+        <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-  </div>
+</div>
 
-  <div class="gallery">
-    <div class="info">
-      <h1 class="customh1">Апартаменти, къщи, търговски помещения за продажба директно от строителя Велинград</h1>
-      <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО СТРОИТЕЛСТВО директно от инвеститора. Вижте всички имоти</p>
-      <a class="gallery1" href="Sgrada1.html">
-        <img src="мазна.png" alt="mazna">
-      </a>
-      <a class="gallery2" href="Sgrada2.html">
-        <img src="Perry_the_Platypus.png" alt="perry">
-      </a>
-      <div class="button-container">
-        <a href="Buildings.html" class="buttons button1"><span>Вижте всички сгради</span></a>
+<div class="gallery">
+  <div class="info">
+    <h1 class="customh1">Апартаменти, къщи, търговски помещения за продажба директно от строителя Велинград</h1>
+    <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО СТРОИТЕЛСТВО директно от инвеститора. Вижте всички имоти</p>
+    <a class="gallery1" href="Sgrada1.html">
+      <img src="мазна.png" alt="mazna" width="600" height="650">
+    </a>
+    <a class="gallery2" href="Sgrada2.html">
+      <img src="Perry_the_Platypus.png" alt="perry" width="600" height="650">
+    </a>
+    <div class="button-container">
+      <a href="Buildings.html" class="buttons button1"><span>Вижте всички сгради</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="testing">
+  <div class="About_us">
+    <h1>За нас</h1>
+    <hr color="black" width="150px" align="left">
+    <p class="About_us_para">
+      Под логото „Металика” стоят две от най сериозните фирми в своя бранш –  „Балканка” ЕООД, „Металика Строй” ЕООД.<br>
+      Още от самото им създаване, дейността на фирмите се ориентира в търговията с черни и цветни метали, арматура и <br>
+      арматурни заготовки, узлуги с механизация, производство на бетонови разтвори, строителство и продажба на сгради <br>
+      и еднофимилни къщи,изграждане на сгради на обещетение,продажба на имоти.<br>
+    </p>
+  </div>
+  
+  <div class="Contact_info">
+    <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
+    <hr color="black" width="400px" align="center">
+    <div class="icon-container">
+      <div class="icon">
+        <i class="fa fa-phone"></i>
+        <p>Номер за връзка:<br>0876842484</p>
+      </div>
+      <div class="icon">
+        <i class="fa fa-envelope"></i>
+        <p>e-mail:<br>neshto@abv.bg</p>
+      </div>
+      <div class="icon">
+        <i class="fa fa-bed"></i>
+        <p>Адрес:<br>Дойран 18</p>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="testing">
-    <div class="About_us">
-      <h1>За нас</h1>
-      <hr color="black" width="150px" align="left">
-      <p class="About_us_para">
-        Под логото „Металика” стоят две от най сериозните фирми в своя бранш –  „Балканка” ЕООД, „Металика Строй” ЕООД.<br>
-        Още от самото им създаване, дейността на фирмите се ориентира в търговията с черни и цветни метали, арматура и <br>
-        арматурни заготовки, узлуги с механизация, производство на бетонови разтвори, строителство и продажба на сгради <br>
-        и еднофимилни къщи,изграждане на сгради на обещетение,продажба на имоти.<br>
-      </p>
-    </div>
 
-    <div class="Contact_info">
-      <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
-      <hr color="black" width="400px" align="center">
-      <div class="icon-container">
-        <div class="icon">
-          <i class="fa fa-phone"></i>
-          <p>Номер за връзка:<br>0876842484</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-envelope"></i>
-          <p>e-mail:<br>neshto@abv.bg</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-bed"></i>
-          <p>Адрес:<br>Дойран 18</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
 </body>
 </html>
