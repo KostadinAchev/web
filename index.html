@@ -21,12 +21,11 @@
       width: 100%;
       padding: 10px 16px;
       box-sizing: border-box;
-      z-index: 1000; /* Ensure navbar is on top */
-      overflow: hidden; /* Prevent content from expanding the navbar */
+      z-index: 1000;
     }
 
     .logo {
-      margin-right: auto; /* Pushes nav-items to the center */
+      margin-right: auto;
     }
 
     .nav-items {
@@ -35,7 +34,7 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      flex-grow: 1; /* Allow this to grow and take available space */
+      flex-grow: 1;
     }
 
     .nav-items li {
@@ -67,14 +66,14 @@
     }
 
     .dropdown {
-      display: none; /* Hidden by default */
+      display: none;
       position: absolute;
-      top: 100%; /* Position it directly below the navbar */
-      right: 0; /* Align dropdown to the right */
+      top: 100%;
+      right: 0;
       background-color: #333;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1000; /* Ensure dropdown is on top */
+      z-index: 1000;
     }
 
     .dropdown a {
@@ -89,18 +88,13 @@
       background-color: #575757;
     }
 
-    /* Show dropdown menu on hover */
-    .menu-icon:hover + .dropdown {
-      display: block;
-    }
-
     /* Main content styles */
     .info {
       background-color: lightpink;
       text-align: center;
       font-family: Arial, sans-serif;
       padding: 80px 16px 16px;
-      margin-top: 58px; /* Adjusted to accommodate navbar height */
+      margin-top: 58px;
     }
 
     .customh1 {
@@ -108,7 +102,7 @@
       text-transform: capitalize;
       font-weight: bold;
       text-decoration: underline;
-      margin: 0; /* Remove margin */
+      margin: 0;
     }
 
     .gallery {
@@ -119,15 +113,15 @@
     }
 
     .gallery img {
-      margin: 15px; 
-      max-width: 100%; /* Ensure images don't exceed container width */
-      height: auto; /* Maintain aspect ratio */
+      margin: 15px;
+      max-width: 100%;
+      height: auto;
     }
 
     .button-container {
-      text-align: center; /* Center the button container */
-      margin-top: 20px; /* Add some margin to separate from the images */
-      margin-bottom: 20px; /* Add bottom margin */
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .buttons {
@@ -142,8 +136,8 @@
       transition: all 0.5s;
       cursor: pointer;
       margin: 5px;
-      text-decoration: none; /* Remove underline from link */
-      color: white; /* Ensure the text color is white */
+      text-decoration: none;
+      color: white;
     }
 
     .button1 span {
@@ -182,7 +176,7 @@
       width: 865px;
       text-align: left;
       font-family: Arial, sans-serif;
-      padding: 16px; /* Adjust padding */
+      padding: 16px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 10px;
     }
@@ -199,8 +193,8 @@
     /* Contact info section styles */
     .Contact_info {
       background-color: bisque;
-      margin: 10px; /* Adjust margin */
-      padding: 16px 0; /* Adjust padding */
+      margin: 10px;
+      padding: 16px 0;
       border-radius: 12px;
       width: 965px;
       max-height: 550px;
@@ -209,7 +203,7 @@
     .h1contact {
       text-align: center;
       font-family: Arial, sans-serif;
-      padding: 16px 0 0; /* Adjust padding */
+      padding: 16px 0 0;
       font-size: 22px;
       font-weight: lighter;
     }
@@ -219,8 +213,8 @@
       background-color: bisque;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around; /* Space between icons */
-      align-items: center; /* Center icons vertically */
+      justify-content: space-around;
+      align-items: center;
       padding: 20px;
       margin: 20px;
     }
@@ -233,13 +227,13 @@
 
     .icon i {
       font-size: 50px;
-      margin-bottom: 10px; /* Space between icon and text */
+      margin-bottom: 10px;
     }
 
     /* Media queries */
     @media only screen and (min-width: 1024px) {
       .navbar {
-        padding: 10px 16px; /* Adjust padding */
+        padding: 10px 16px;
       }
 
       .gallery {
@@ -252,84 +246,86 @@
       }
 
       .menu-icon {
-        display: none; /* Hide menu icon on larger screens */
+        display: none;
       }
 
       .dropdown {
-        display: none; /* Ensure dropdown is hidden on larger screens */
+        display: none;
       }
     }
 
     @media only screen and (max-width: 768px) {
-      .info {
-        padding-top: 120px; /* Adjust padding for info section */
-      }
+  .info {
+    padding-top: 120px;
+  }
 
-      .customh1 {
-        font-size: 24px; /* Decrease font size for customh1 */
-      }
+  .customh1 {
+    font-size: 24px;
+  }
 
-      .gallery img {
-        margin-bottom: 10px; /* Adjust margin for smaller screens */
-      }
+  .gallery img {
+    margin-bottom: 10px;
+  }
 
-      .icon {
-        font-size: 20px; /* Decrease icon size for smaller screens */
-      }
+  .icon {
+    font-size: 20px;
+  }
 
-      .icon i {
-        font-size: 40px; /* Decrease icon size for smaller screens */
-      }
+  .icon i {
+    font-size: 40px;
+  }
 
-      .icon-container {
-        flex-direction: column;
-      }
+  .icon-container {
+    flex-direction: column;
+  }
 
-      .testing {
-        flex-direction: column;
-      }
+  .testing {
+    flex-direction: column;
+  }
 
-      .About_us {
-        width: 100%; /* Full width on mobile */
-      }
+  .About_us, .Contact_info {
+    width: 90%; /* Set both to the same width for consistency */
+    margin: 10px auto; /* Center-align and provide consistent margin */
+    padding: 16px;
+  }
 
-      .Contact_info {
-        width: 100%; /* Full width on mobile */
-      }
+  .About_us {
+    /* Additional styling specific to About Us if needed */
+  }
 
-      .nav-items {
-        display: none; /* Hide the regular menu */
-      }
+  .Contact_info {
+    /* Additional styling specific to Contact Info if needed */
+  }
 
-      .menu-icon {
-        display: block; /* Show the menu icon */
-      }
+  .nav-items {
+    display: none;
+  }
 
-      .dropdown {
-        display: none; /* Ensure dropdown is hidden on mobile */
-        position: absolute; /* Position it absolutely */
-        width: 100%; /* Full width on mobile */
-        top: 100%; /* Position it directly below the navbar */
-        right: 0; /* Align dropdown to the right */
-      }
+  .menu-icon {
+    display: block;
+  }
 
-      .menu-icon:hover + .dropdown {
-        display: block; /* Show dropdown menu on hover of menu icon */
-      }
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    right: 0;
+  }
+}
   </style>
 </head>
 <body>
 <div class="navbar">
     <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
-    <span class="menu-icon"><i class="fa fa-bars"></i></span>
+    <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Info.html">Information</a></li>
         <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-    <div class="dropdown">
+    <div class="dropdown" id="dropdown-menu">
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="Info.html">Information</a>
@@ -385,5 +381,23 @@
   </div>
 </div>
 
+<script>
+  function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown-menu");
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
+  }
+
+  // Ensure the dropdown works correctly on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.getElementById("dropdown-menu");
+    if (!dropdown) {
+      console.error("Dropdown menu not found.");
+    }
+  });
+</script>
 </body>
 </html>
