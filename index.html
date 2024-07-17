@@ -212,6 +212,33 @@ body {
   width: 80%; /* Responsive width for different screen sizes */
   margin: 20px auto; /* Center-align and add vertical space */
 }
+/* Icon Container Styles */
+.icon-container {
+  display: flex; /* Use flexbox to align icons horizontally */
+  justify-content: space-around; /* Distribute space evenly between icons */
+  align-items: center; /* Center-align items vertically */
+  padding: 20px;
+  margin: 10px 0; /* Adjust vertical margin as needed */
+}
+
+/* Icon Styles */
+.icon {
+  text-align: center;
+  color: #333;
+  font-size: 24px; /* Increase font size for larger icons */
+  flex: 1; /* Allow icons to expand and take available space */
+}
+
+.icon i {
+  font-size: 50px; /* Increase the icon size */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.icon p {
+  margin: 0; /* Remove default margins from paragraph */
+  font-size: 16px; /* Adjust font size for readability */
+  font-weight: bold;
+}
 
 
 /* Responsive Styles */
@@ -238,6 +265,7 @@ body {
   }
 }
 
+/* Responsive Styles */
 @media only screen and (max-width: 768px) {
   .info {
     padding-top: 120px;
@@ -265,15 +293,17 @@ body {
   }
 
   .icon i {
-    font-size: 40px;
+    font-size: 40px; /* Adjust icon size for mobile */
   }
 
   .icon-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack icons vertically on mobile */
+    align-items: center; /* Center-align icons horizontally */
+    text-align: center; /* Center-align text under icons */
   }
 
-  .testing {
-    flex-direction: column;
+  .icon-container p {
+    font-size: 14px; /* Adjust text size for mobile */
   }
 
   .About_us, .Contact_info {
@@ -299,7 +329,6 @@ body {
     right: 0;
   }
 }
-
   </style>
 </head>
 <body>
