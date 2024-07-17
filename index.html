@@ -65,7 +65,6 @@
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       top: 60px;
-      right: 0; /* Align dropdown to the right */
     }
 
     .dropdown a {
@@ -78,6 +77,10 @@
 
     .dropdown a:hover {
       background-color: #575757;
+    }
+
+    .dropdown-content {
+      display: block;
     }
 
     .menu-icon {
@@ -165,9 +168,9 @@
     }
     
     .testing {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center align items */
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center items for smaller screens */
     }
 
     /* About us section styles */
@@ -247,14 +250,6 @@
       .icon-container {
         flex-direction: row;
       }
-
-      .menu-icon {
-        display: none; /* Hide menu icon on larger screens */
-      }
-
-      .dropdown {
-        display: none; /* Ensure dropdown is hidden on larger screens */
-      }
     }
 
     @media only screen and (max-width: 768px) {
@@ -290,13 +285,11 @@
       .About_us {
         width: 100%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width constraint */
-        margin: 10px 0; /* Adjust margins */
       }
 
       .Contact_info {
         width: 100%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width constraint */
-        margin: 10px 0; /* Adjust margins */
       }
 
       .nav-items {
@@ -308,8 +301,11 @@
       }
 
       .dropdown {
-        display: block; /* Show dropdown by default on mobile */
-        position: static; /* Ensure dropdown menu appears below menu icon */
+        display: none; /* Hide dropdown by default */
+      }
+
+      .dropdown-content {
+        display: block; /* Show dropdown on click */
       }
     }
   </style>
