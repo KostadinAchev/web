@@ -94,7 +94,7 @@ body {
   background-color: lightpink;
   text-align: center;
   font-family: Arial, sans-serif;
-  padding: 80px 16px 16px;
+  padding: 80px 245px 16px;
   margin-top: 58px;
 }
 
@@ -106,18 +106,37 @@ body {
   margin: 0;
 }
 
+/* Gallery Styles */
 .gallery {
   background-color: white;
   padding: 20px;
   margin: 20px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center-align items */
+  gap: 20px; /* Add space between images */
 }
 
-.gallery img {
-  margin: 15px;
-  max-width: 100%;
-  height: auto;
+/* Image Container Styles */
+.gallery-item {
+  height: 400px; /* Set a consistent height for the image container */
+  width: 600px; /* Adjust the width to fit your design */
+  border-radius: 8px; /* Add rounded corners to the container */
+  overflow: hidden; /* Hide any overflow content */
+  background-color: #f5f5f5; /* Optional: set a background color for the container */
+  border: 2px solid #ddd; /* Optional: add a border to the container */
 }
+
+/* Image Styles */
+.gallery-item img {
+  height: 100%; /* Make the image fill the container height */
+  width: 100%; /* Make the image fill the container width */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  display: block; /* Remove any extra space below the image */
+}
+
 
 .button-container {
   text-align: center;
