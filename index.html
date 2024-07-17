@@ -103,6 +103,7 @@
       font-weight: bold;
       text-decoration: underline;
       margin: 0;
+      font-size: 28px; /* Adjusted font size */
     }
 
     .gallery {
@@ -166,19 +167,22 @@
     }
 
     .testing {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items */
     }
 
     /* About us section styles */
     .About_us {
       background-color: lightblue;
       border-radius: 12px;
-      width: 865px;
+      width: 100%; /* Changed to 100% */
+      max-width: 865px; /* Set a max width */
       text-align: left;
       font-family: Arial, sans-serif;
       padding: 16px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px;
+      margin: 10px auto; /* Centered and added auto margin */
     }
 
     .About_us h1 {
@@ -196,8 +200,10 @@
       margin: 10px;
       padding: 16px 0;
       border-radius: 12px;
-      width: 965px;
-      max-height: 550px;
+      width: 100%; /* Changed to 100% */
+      max-width: 965px; /* Set a max width */
+      box-sizing: border-box;
+      margin: 10px auto; /* Centered and added auto margin */
     }
 
     .h1contact {
@@ -213,16 +219,18 @@
       background-color: bisque;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center; /* Center items */
       align-items: center;
       padding: 20px;
-      margin: 20px;
+      margin: 20px auto; /* Centered and added auto margin */
+      max-width: 1000px; /* Set a max width */
     }
 
     .icon {
       text-align: center;
       color: #333;
       font-size: 24px;
+      margin: 10px;
     }
 
     .icon i {
@@ -255,64 +263,69 @@
     }
 
     @media only screen and (max-width: 768px) {
-  .info {
-    padding-top: 120px;
-  }
+      .info {
+        padding-top: 120px;
+      }
 
-  .customh1 {
-    font-size: 24px;
-  }
+      .customh1 {
+        font-size: 24px;
+      }
 
-  .gallery img {
-    margin-bottom: 10px;
-  }
+      .gallery img {
+        margin-bottom: 10px;
+      }
 
-  .icon {
-    font-size: 20px;
-  }
+      .icon {
+        font-size: 20px;
+        margin: 10px;
+      }
 
-  .icon i {
-    font-size: 40px;
-  }
+      .icon i {
+        font-size: 40px;
+      }
 
-  .icon-container {
-    flex-direction: column;
-  }
+      .icon-container {
+        flex-direction: column;
+        align-items: center; /* Center items */
+      }
 
-  .testing {
-    flex-direction: column;
-  }
+      .testing {
+        flex-direction: column;
+        align-items: center; /* Center items */
+      }
 
-  .About_us, .Contact_info {
-    width: 90%; /* Set both to the same width for consistency */
-    margin: 10px auto; /* Center-align and provide consistent margin */
-    padding: 16px;
-  }
+      .About_us, .Contact_info {
+        width: 90%; /* Set both to the same width for consistency */
+        margin: 10px auto; /* Center-align and provide consistent margin */
+        padding: 16px;
+      }
 
-  .About_us {
-    /* Additional styling specific to About Us if needed */
-  }
+      .About_us {
+        /* Additional styling specific to About Us if needed */
+      }
 
-  .Contact_info {
-    /* Additional styling specific to Contact Info if needed */
-  }
+      .Contact_info {
+        /* Additional styling specific to Contact Info if needed */
+      }
 
-  .nav-items {
-    display: none;
-  }
+      .nav-items {
+        display: none;
+      }
 
-  .menu-icon {
-    display: block;
-  }
+      .menu-icon {
+        display: block;
+      }
 
-  .dropdown {
-    display: none;
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    right: 0;
-  }
-}
+      .dropdown {
+        display: block; /* Show dropdown menu */
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        right: 0;
+        background-color: #333;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      }
+    }
   </style>
 </head>
 <body>
