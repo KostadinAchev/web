@@ -23,19 +23,18 @@
       padding: 10px 16px;
       box-sizing: border-box;
       z-index: 1000; /* Ensure navbar is on top */
+      justify-content: space-between; /* Align logo and menu */
     }
 
-    .logo {
-      margin-right: auto; /* Pushes nav-items to the center */
+    .logo img {
+      height: 40px;
     }
 
     .nav-items {
       display: flex;
-      justify-content: center;
       list-style-type: none;
       margin: 0;
       padding: 0;
-      flex-grow: 1; /* Allow this to grow and take available space */
     }
 
     .nav-items li {
@@ -56,6 +55,39 @@
 
     .active {
       background-color: #04AA6D;
+    }
+
+    .dropdown {
+      display: none; /* Hidden by default */
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 60px;
+    }
+
+    .dropdown a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown a:hover {
+      background-color: #575757;
+    }
+
+    .dropdown-content {
+      display: block;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
     }
 
     /* Main content styles */
@@ -146,12 +178,12 @@
       background-color: lightblue;
       border-radius: 12px;
       width: 90%; /* Adjust width to fit on mobile screens */
-      max-width: 865px; /* Max width for larger screens */
+      max-width: 965px; /* Max width to match Contact Info section */
       text-align: left;
       font-family: Arial, sans-serif;
       padding: 16px; /* Adjust padding */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px;
+      margin: 10px auto; /* Center align and margin adjustments */
     }
 
     .About_us h1 {
@@ -259,18 +291,41 @@
         width: 100%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width constraint */
       }
+
+      .nav-items {
+        display: none; /* Hide the regular menu */
+      }
+
+      .menu-icon {
+        display: block; /* Show the menu icon */
+      }
+
+      .dropdown {
+        display: none; /* Hide dropdown by default */
+      }
+
+      .dropdown-content {
+        display: block; /* Show dropdown on click */
+      }
     }
   </style>
 </head>
 <body>
 <div class="navbar">
-    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo"></a>
+    <span class="menu-icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Info.html">Information</a></li>
         <li><a href="Buildings.html">Buildings</a></li>
     </ul>
+    <div class="dropdown" id="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Info.html">Information</a>
+        <a href="Buildings.html">Buildings</a>
+    </div>
 </div>
 
 <div class="gallery">
@@ -320,5 +375,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  function toggleMenu() {
+    var dropdown = document.getElementById("dropdown-menu");
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
+  }
+</script>
 </body>
 </html>
