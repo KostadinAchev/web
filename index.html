@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    /* General styles */
     body {
       background-color: #333;
       margin: 0;
@@ -23,6 +22,7 @@
       padding: 10px 16px;
       box-sizing: border-box;
       z-index: 1000; /* Ensure navbar is on top */
+      overflow: hidden; /* Prevent content from expanding the navbar */
     }
 
     .logo {
@@ -50,7 +50,7 @@
       text-decoration: none;
     }
 
-    .nav-items li a:hover:not(.active){
+    .nav-items li a:hover:not(.active) {
       background-color: #111;
     }
 
@@ -69,12 +69,12 @@
     .dropdown {
       display: none; /* Hidden by default */
       position: absolute;
+      top: 100%; /* Position it directly below the navbar */
+      right: 0; /* Align dropdown to the right */
       background-color: #333;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      right: 10px; /* Align dropdown to the right */
-      top: 60px; /* Position it below the navbar */
+      z-index: 1000; /* Ensure dropdown is on top */
     }
 
     .dropdown a {
@@ -89,13 +89,18 @@
       background-color: #575757;
     }
 
+    /* Show dropdown menu on hover */
+    .menu-icon:hover + .dropdown {
+      display: block;
+    }
+
     /* Main content styles */
     .info {
       background-color: lightpink;
       text-align: center;
       font-family: Arial, sans-serif;
       padding: 80px 16px 16px;
-      margin-top: 58px;
+      margin-top: 58px; /* Adjusted to accommodate navbar height */
     }
 
     .customh1 {
@@ -167,22 +172,19 @@
     }
 
     .testing {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center align items */
+      display: inline-flex;
     }
 
     /* About us section styles */
     .About_us {
       background-color: lightblue;
       border-radius: 12px;
-      width: 90%; /* Adjust width to fit on mobile screens */
-      max-width: 965px; /* Max width to match Contact Info section */
+      width: 865px;
       text-align: left;
       font-family: Arial, sans-serif;
       padding: 16px; /* Adjust padding */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px auto; /* Center align and margin adjustments */
+      margin: 10px;
     }
 
     .About_us h1 {
@@ -198,11 +200,10 @@
     .Contact_info {
       background-color: bisque;
       margin: 10px; /* Adjust margin */
-      padding: 16px; /* Adjust padding */
+      padding: 16px 0; /* Adjust padding */
       border-radius: 12px;
-      width: 90%; /* Adjust width to fit on mobile screens */
-      max-width: 965px; /* Max width for larger screens */
-      box-sizing: border-box;
+      width: 965px;
+      max-height: 550px;
     }
 
     .h1contact {
@@ -286,19 +287,14 @@
 
       .testing {
         flex-direction: column;
-        align-items: center; /* Center align items for mobile view */
       }
 
       .About_us {
-        width: 100%; /* Ensure full width on mobile */
-        max-width: none; /* Remove max-width constraint */
-        margin: 10px 0; /* Adjust margins */
+        width: 100%; /* Full width on mobile */
       }
 
       .Contact_info {
-        width: 100%; /* Ensure full width on mobile */
-        max-width: none; /* Remove max-width constraint */
-        margin: 10px 0; /* Adjust margins */
+        width: 100%; /* Full width on mobile */
       }
 
       .nav-items {
@@ -310,23 +306,30 @@
       }
 
       .dropdown {
-        display: block; /* Show dropdown by default on mobile */
-        position: static; /* Ensure dropdown menu appears below menu icon */
+        display: none; /* Ensure dropdown is hidden on mobile */
+        position: absolute; /* Position it absolutely */
+        width: 100%; /* Full width on mobile */
+        top: 100%; /* Position it directly below the navbar */
+        right: 0; /* Align dropdown to the right */
+      }
+
+      .menu-icon:hover + .dropdown {
+        display: block; /* Show dropdown menu on hover of menu icon */
       }
     }
   </style>
 </head>
 <body>
 <div class="navbar">
-    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo"></a>
-    <span class="menu-icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></span>
+    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <span class="menu-icon"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Info.html">Information</a></li>
         <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-    <div class="dropdown" id="dropdown-menu">
+    <div class="dropdown">
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="Info.html">Information</a>
@@ -339,10 +342,10 @@
     <h1 class="customh1">Апартаменти, къщи, търговски помещения за продажба директно от строителя Велинград</h1>
     <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО СТРОИТЕЛСТВО директно от инвеститора. Вижте всички имоти</p>
     <a class="gallery1" href="Sgrada1.html">
-      <img src="мазна.png" alt="mazna">
+      <img src="мазна.png" alt="mazna" width="600" height="650">
     </a>
     <a class="gallery2" href="Sgrada2.html">
-      <img src="Perry_the_Platypus.png" alt="perry">
+      <img src="Perry_the_Platypus.png" alt="perry" width="600" height="650">
     </a>
     <div class="button-container">
       <a href="Buildings.html" class="buttons button1"><span>Вижте всички сгради</span></a>
@@ -382,15 +385,5 @@
   </div>
 </div>
 
-<script>
-  function toggleMenu() {
-    var dropdown = document.getElementById("dropdown-menu");
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
-    }
-  }
-</script>
 </body>
 </html>
