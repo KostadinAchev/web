@@ -499,15 +499,16 @@
         z-index: 1000;
       }
 
+      .dropmenu.show .dropdown-content {
+        display: block;
+        /* Show dropdown content when 'show' class is added */
+      }
+
       .dropdown-content {
         position: static;
         background-color: #ec0b0b;
         width: 510px;
         display: none;
-      }
-
-      .dropdown-content.show {
-        display: block;
       }
 
       .dropbtn {
@@ -544,7 +545,7 @@
       </li>
       <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-  
+
     <div class="dropdownphone" id="dropdown-menu">
       <a class="active" href="index.html">Home</a>
       <a href="About.html">About Us</a>
@@ -559,7 +560,8 @@
       <a href="Buildings.html">Buildings</a>
     </div>
   </div>
-  
+
+
 
   <h1>123</h1>
   <div class="customh1">
@@ -623,39 +625,28 @@
 
 
   <script>
-   function toggleDropdown() {
-  var dropdown = document.getElementById("dropdown-menu");
-  if (dropdown) {
-    dropdown.classList.toggle("show");
-  }
-}
+    function toggleDropdown() {
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('show');
+    }
 
-// Close dropdown when clicking outside of it
-document.addEventListener('click', function(event) {
-  var dropdown = document.getElementById("dropdown-menu");
-  if (!dropdown.contains(event.target) && !event.target.matches('.menu-icon')) {
-    dropdown.classList.remove("show");
-  }
-});
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.menu-icon') && !event.target.closest('#dropdown-menu')) {
+        const dropdowns = document.querySelectorAll('.dropdownphone');
+        dropdowns.forEach(function (dropdown) {
+          dropdown.classList.remove('show');
+        });
+      }
+    });
 
-    document.querySelectorAll('.dropdownphone .dropbtn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.stopPropagation();
-        var dropdownContent = this.nextElementSibling;
+    document.querySelectorAll('.dropmenu').forEach(function (menu) {
+      menu.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent event from bubbling up and closing the dropdown
+        const dropdownContent = menu.querySelector('.dropdown-content');
         dropdownContent.classList.toggle('show');
       });
     });
 
-    document.addEventListener('click', function (event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(function (dropdown) {
-          if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-          }
-        });
-      }
-    });
   </script>
 </body>
 
