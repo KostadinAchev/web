@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  background-color: rgb(158, 109, 97);
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+   body {
+      background-color: #333;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-top: 70px;
+      /* Adjust based on your navbar height */
+    }
 
-.navbar {
+    .navbar {
       display: flex;
       align-items: center;
-      background-color: #333;
+      background-color: #252323;
       position: fixed;
       top: 0;
       width: 100%;
       padding: 10px 16px;
       box-sizing: border-box;
+      z-index: 1000;
     }
 
     .logo {
-      margin-right: auto; /* Pushes nav-items to the center */
+      margin-right: auto;
     }
 
     .nav-items {
@@ -29,11 +34,12 @@ body {
       list-style-type: none;
       margin: 0;
       padding: 0;
-      flex-grow: 1; /* Allow this to grow and take available space */
+      flex-grow: 1;
     }
 
     .nav-items li {
       padding: 0;
+      position: relative; /* Added for dropdown positioning */
     }
 
     .nav-items li a {
@@ -44,7 +50,7 @@ body {
       text-decoration: none;
     }
 
-    .nav-items li a:hover:not(.active){
+    .nav-items li a:hover:not(.active) {
       background-color: #111;
     }
 
@@ -52,20 +58,222 @@ body {
       background-color: #04AA6D;
     }
 
-</style>
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2e2d2d;
+      width: 120px;
+      width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdownphone {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #4e4747;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .dropdownphone a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdownphone a:hover{
+      background-color: #575757;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
+
+    .dropbtn {
+      background-color: #252323;
+      color: white;
+      padding: 14px 16px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 120px;
+    }
+    .dropbtn:hover {
+      background-color: #575757;
+    }
+
+    .dropmenu:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropmenu{
+      position: relative;
+      display: inline-block;
+      width: 120px;
+    }
+
+    .image {
+      background-image: url('pexels-photo-106399.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 500px; /* Set a fixed height for the image container */
+      margin-top: 20px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .navbar {
+        padding: 10px 16px;
+      }
+
+      .menu-icon {
+        display: none;
+      }
+
+      .dropdownphone {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .image {
+        height: 280px;
+      }
+
+      .nav-items {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .dropdownphone {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        right: 0;
+      }
+
+      .dropdown-content{
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        background-color: #575757;
+      }
+
+      .dropmenu {
+        width: 100%;
+      }
+
+      .dropbtn {
+        text-align: left;
+        width: 100%;
+        background-color: #4e4747;
+      }
+
+      .dropmenu:hover .dropdown-content {
+        display: none;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="navbar">
+
+  <div class="navbar">
     <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="About.html">About</a></li>
-        <li><a href="Info.html">Information</a></li>
-        <li><a href="Buildings.html">Buildings</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="About.html">About Us</a></li>
+      <li class="dropmenu">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+      <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-</div>
 
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="dropdownphone" id="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a class="active" href="About.html">About Us</a>
+      <li class="dropmenu">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+      <a href="Buildings.html">Buildings</a>
+      
+    </div>
+  </div>
 
+  <div class="image"></div>
+
+  <div class="text"></div>
+
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdown-menu");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.getElementById("dropdown-menu");
+      if (!dropdown) {
+        console.error("Dropdown menu not found.");
+      }
+    });
+
+    document.querySelectorAll('.dropdownphone .dropbtn').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.classList.toggle('show');
+      });
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(function(dropdown) {
+          if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
