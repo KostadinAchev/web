@@ -489,6 +489,7 @@
       }
 
       .dropdownphone {
+        display: none;
         display: block;
         position: absolute;
         top: 100%;
@@ -544,7 +545,7 @@
       </li>
       <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-
+  
     <div class="dropdownphone" id="dropdown-menu">
       <a class="active" href="index.html">Home</a>
       <a href="About.html">About Us</a>
@@ -559,6 +560,7 @@
       <a href="Buildings.html">Buildings</a>
     </div>
   </div>
+  
 
   <h1>123</h1>
   <div class="customh1">
@@ -622,21 +624,20 @@
 
 
   <script>
-    function toggleDropdown() {
-      var dropdown = document.getElementById("dropdown-menu");
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
-      }
-    }
+   function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown-menu");
+  if (dropdown) {
+    dropdown.classList.toggle("show");
+  }
+}
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdown = document.getElementById("dropdown-menu");
-      if (!dropdown) {
-        console.error("Dropdown menu not found.");
-      }
-    });
+// Close dropdown when clicking outside of it
+document.addEventListener('click', function(event) {
+  var dropdown = document.getElementById("dropdown-menu");
+  if (!dropdown.contains(event.target) && !event.target.matches('.menu-icon')) {
+    dropdown.classList.remove("show");
+  }
+});
 
     document.querySelectorAll('.dropdownphone .dropbtn').forEach(function (button) {
       button.addEventListener('click', function (event) {
