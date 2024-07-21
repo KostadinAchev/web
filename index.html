@@ -44,7 +44,7 @@
 
     .nav-items li {
       padding: 0;
-      
+
     }
 
     .nav-items li a {
@@ -53,7 +53,7 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      
+
     }
 
     .nav-items li a:hover:not(.active) {
@@ -94,17 +94,19 @@
     .dropdownphone a:hover {
       background-color: #575757;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
       background-color: #2e2d2d;
+      min-width: 120px;
+      max-width: 1000px;
       width: 120px;
-      width: 100%;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
 
-    
+
     .dropdown-content a:hover {
       background-color: #575757;
     }
@@ -116,8 +118,11 @@
       border: none;
       cursor: pointer;
       font-size: 16px;
+      min-width: 120px;
       width: 120px;
+      max-width: 1000px;
     }
+
     .dropbtn:hover {
       background-color: #575757;
     }
@@ -126,11 +131,12 @@
       display: block;
     }
 
-    .dropmenu{
+    .dropmenu {
       position: relative;
       display: inline-block;
       width: 120px;
     }
+
     /* Main Content Styles */
     .info {
       background-color: lightpink;
@@ -142,24 +148,28 @@
     }
 
     .customh1 {
-    color: rgb(255, 0, 128);
-    background-image: url('pexels-photo-106399.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; /* Ensures the background image covers the whole area */
-    text-transform: capitalize;
-    font-weight: bold;
-    text-decoration: underline;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Ensures that text elements are stacked vertically */
-    height: 400px; /* Set a fixed height to ensure the container has enough space */
-    width: calc(100% - 83px);
-    max-width: 865; /* Optional: set a maximum width */
+      color: rgb(255, 0, 128);
+      background-image: url('pexels-photo-106399.jpeg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Ensures the background image covers the whole area */
+      text-transform: capitalize;
+      font-weight: bold;
+      text-decoration: underline;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* Ensures that text elements are stacked vertically */
+      height: 400px;
+      /* Set a fixed height to ensure the container has enough space */
+      width: calc(100% - 83px);
+      max-width: 865;
+      /* Optional: set a maximum width */
     }
 
     /* Gallery Styles */
@@ -258,7 +268,7 @@
       display: flex;
       /* Use flex instead of inline-flex to handle responsiveness better */
       flex-direction: row;
-      flex-wrap: wrap;  
+      flex-wrap: wrap;
       /* Allow items to wrap on smaller screens */
     }
 
@@ -276,8 +286,8 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 10px auto;
       margin-left: 20px;
-      
-      
+
+
       /* Center-align with margin auto */
     }
 
@@ -294,7 +304,7 @@
     .Contact_info {
       background-color: bisque;
       margin: 10px auto;
-      
+
       /* Center-align with margin auto */
       padding: 16px;
       margin-right: 20px;
@@ -385,24 +395,33 @@
     /* Responsive Styles */
     @media only screen and (max-width: 768px) {
 
-        .customh1 {
-        font-size: 20px; /* Adjust font size for smaller screens */
-        height: auto; /* Allow height to adjust based on content */
+      .customh1 {
+        font-size: 20px;
+        /* Adjust font size for smaller screens */
+        height: auto;
+        /* Allow height to adjust based on content */
         padding: 10px;
-        width: calc(100% - 70px); /* Adjust width for smaller screens */
+        width: calc(100% - 70px);
+        /* Adjust width for smaller screens */
         margin: 10px auto;
-        height: 150px; /* Kolko e dulga samata kartina*/
+        height: 150px;
+        /* Kolko e dulga samata kartina*/
       }
 
       .customh1 h1 {
-        font-size: 16px; /* Adjust heading font size */
-        text-align: center; /* Center-align text */
+        font-size: 16px;
+        /* Adjust heading font size */
+        text-align: center;
+        /* Center-align text */
       }
 
       .customh1 p {
-        font-size: 12px; /* Adjust paragraph font size */
-        text-align: center; /* Center-align text */
+        font-size: 12px;
+        /* Adjust paragraph font size */
+        text-align: center;
+        /* Center-align text */
       }
+
       .info {
         padding-top: 120px;
         padding: 16px;
@@ -461,45 +480,50 @@
         /* Ensure padding is included in width */
       }
 
-      @media only screen and (max-width: 768px) {
-  /* Adjust menu display for mobile */
-  .nav-items {
-    display: none;
-  }
+      .nav-items {
+        display: none;
+      }
 
-  .menu-icon {
-    display: block;
-  }
+      .menu-icon {
+        display: block;
+      }
 
-  .dropdownphone {
-    display: block;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #4e4747;
-    min-width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
+      .dropdownphone {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #4e4747;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
 
-  .dropdown-content {
-    position: static;
-    background-color: #4e4747;
-    width: 100%;
-    display: none;
-  }
+      .dropdown-content {
+        position: static;
+        background-color: #ec0b0b;
+        width: 510px;
+        display: none;
+      }
 
-  .dropdown-content.show {
-    display: block;
-  }
+      .dropdown-content.show {
+        display: block;
+      }
 
-  .dropbtn {
-    text-align: left;
-    width: 100%;
-    background-color: #4e4747;
-  }
-}
-}
+      .dropbtn {
+        text-align: left;
+        width: 510px;
+        background-color: #4e4747;
+      }
+
+      .dropmenu:hover .dropdown-content {
+        display: none;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+    }
   </style>
 </head>
 
@@ -536,19 +560,51 @@
     </div>
   </div>
 
-  
+  <!-- Your existing content -->
+
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdown-menu");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdowns = document.querySelectorAll('.dropmenu');
+      dropdowns.forEach(function (menu) {
+        menu.addEventListener('click', function (event) {
+          event.stopPropagation();
+          var dropdownContent = this.querySelector('.dropdown-content');
+          dropdownContent.classList.toggle('show');
+        });
+      });
+
+      document.addEventListener('click', function (event) {
+        var dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(function (dropdown) {
+          if (dropdown.classList.contains('show') && !event.target.closest('.dropmenu')) {
+            dropdown.classList.remove('show');
+          }
+        });
+      });
+    });
+  </script>
   <h1>123</h1>
   <div class="customh1">
     <h1>Строителство, продажба, отдаване под наем</h1>
-    
+
   </div>
 
   <div class="gallery">
     <div class="info">
 
       <h1>Апартаменти, къщи, търговски помещения за продажба директно от строителя Велинград</h1>
-      <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО СТРОИТЕЛСТВО
-      директно от инвеститора. Вижте всички имоти</p>
+      <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО
+        СТРОИТЕЛСТВО
+        директно от инвеститора. Вижте всички имоти</p>
       <a class="gallery1" href="Sgrada1.html">
         <img src="мазна.png" alt="mazna" width="600" height="650">
       </a>
@@ -596,7 +652,7 @@
     </div>
   </div>
 
-  
+
   <script>
     function toggleDropdown() {
       var dropdown = document.getElementById("dropdown-menu");
@@ -614,18 +670,18 @@
       }
     });
 
-    document.querySelectorAll('.dropdownphone .dropbtn').forEach(function(button) {
-      button.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdownphone .dropbtn').forEach(function (button) {
+      button.addEventListener('click', function (event) {
         event.stopPropagation();
         var dropdownContent = this.nextElementSibling;
         dropdownContent.classList.toggle('show');
       });
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(function(dropdown) {
+        dropdowns.forEach(function (dropdown) {
           if (dropdown.classList.contains('show')) {
             dropdown.classList.remove('show');
           }
