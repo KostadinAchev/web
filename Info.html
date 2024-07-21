@@ -55,17 +55,63 @@ body {
 </style>
 </head>
 <body>
-<div class="navbar">
+  <div class="navbar">
     <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="About.html">About Us</a></li>
-        <li><a class="active" href="Info.html">Information</a></li>
-        <li><a href="Buildings.html">Buildings</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="About.html">About Us</a></li>
+      <li class="dropmenu">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+      <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-</div>
 
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="dropdownphone" id="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a class="active" href="About.html">About Us</a>
+      <li class="dropmenu">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+      <a href="Buildings.html">Buildings</a>
+      
+    </div>
+  </div>
 
+<script>
+  function toggleDropdown() {
+    var navItems = document.querySelector('.nav-items');
+    var dropdown = document.getElementById("dropdown-menu");
+    if (navItems.classList.contains('show')) {
+      navItems.classList.remove('show');
+      dropdown.style.display = "none";
+    } else {
+      navItems.classList.add('show');
+      dropdown.style.display = "block";
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var dropdown = document.getElementById("dropdown-menu");
+    if (!dropdown) {
+      console.error("Dropdown menu not found.");
+    }
+  });
+
+</script>
 </body>
 </html>

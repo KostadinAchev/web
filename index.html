@@ -10,14 +10,16 @@
     body {
       background-color: #333;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-
+    .idk{
+      visibility: none;
+    }
     /* Navbar Styles */
     .navbar {
       display: flex;
       align-items: center;
-      background-color: #252323;
+      background-color: #ffffff;
       position: fixed;
       top: 0;
       width: 100%;
@@ -31,7 +33,10 @@
       margin-left: 9px;
       margin-right: auto;
       border-radius: 8px;
+      mix-blend-mode: multiply;
     }
+
+
 
     .nav-items {
       display: flex;
@@ -40,6 +45,8 @@
       margin: 0;
       padding: 0;
       flex-grow: 1;
+
+
     }
 
     .nav-items li {
@@ -49,20 +56,26 @@
 
     .nav-items li a {
       display: block;
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-
+      background-color: #a87c7c;
+      /* Default background color */
+      color: white;
     }
 
     .nav-items li a:hover:not(.active) {
-      background-color: #111;
+      background-color: #c76464;
+      /* Hover background color */
     }
 
-    .active {
+    /* Ensure this rule is listed after the other rules */
+    .nav-items li a.active {
       background-color: #04AA6D;
+      /* Active background color */
     }
+
 
     .menu-icon {
       display: none;
@@ -112,7 +125,7 @@
     }
 
     .dropbtn {
-      background-color: #252323;
+      background-color: #a87c7c;
       color: white;
       padding: 14px 16px;
       border: none;
@@ -121,10 +134,11 @@
       min-width: 120px;
       width: 120px;
       max-width: 1000px;
+      padding-bottom: 14px;
     }
 
     .dropbtn:hover {
-      background-color: #575757;
+      background-color: #c76464;
     }
 
     .dropmenu:hover .dropdown-content {
@@ -139,7 +153,7 @@
 
     /* Main Content Styles */
     .info {
-      background-color: lightpink;
+      background-color: rgb(172, 186, 204);
       border-radius: 8px;
       text-align: center;
       font-family: Arial, sans-serif;
@@ -147,17 +161,17 @@
       padding-top: 50px;
     }
 
+
     .customh1 {
-      color: rgb(255, 0, 128);
-      background-image: url('pexels-photo-106399.jpeg');
+      color: rgb(255, 0, 0);
+      background-image: url('home_office1.jpg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       /* Ensures the background image covers the whole area */
-      text-transform: capitalize;
       font-weight: bold;
-      text-decoration: underline;
       padding: 20px;
+      font-size: 29px;
       margin: 20px auto;
       border-radius: 8px;
       display: flex;
@@ -170,6 +184,20 @@
       width: calc(100% - 83px);
       max-width: 865;
       /* Optional: set a maximum width */
+    }
+
+    .moto {
+      mix-blend-mode: multiply;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: 55px;
+      max-width: 100%;
+      z-index: 1;
+    }
+
+    .textMoveUp {
+      position: relative;
+      top: -35px;
     }
 
     /* Gallery Styles */
@@ -215,6 +243,17 @@
       display: block;
       /* Remove any extra space below the image */
     }
+
+    .inlineBP li {
+      float: left;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 26px;
+      margin-left: 100px;
+      margin-bottom: 1cm;
+
+    }
+
 
 
     .button-container {
@@ -274,19 +313,19 @@
 
     /* About Us Section Styles */
     .About_us {
-      background-color: lightblue;
+      background-color: rgba(165, 189, 171, 0.973);
       border-radius: 12px;
       width: 890px;
       /* Adjust width to 100% on mobile */
       max-width: 900px;
       /* Maximum width on larger screens */
-      text-align: left;
+      text-align: justify;
       font-family: Arial, sans-serif;
       padding: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 10px auto;
       margin-left: 20px;
-
+      font-weight: lighter;
 
       /* Center-align with margin auto */
     }
@@ -398,14 +437,11 @@
       .customh1 {
         font-size: 20px;
         /* Adjust font size for smaller screens */
-        height: auto;
-        /* Allow height to adjust based on content */
         padding: 10px;
         width: calc(100% - 70px);
         /* Adjust width for smaller screens */
-        margin: 10px auto;
         height: 150px;
-        /* Kolko e dulga samata kartina*/
+        /* Reduce height for better fit on mobile screens */
       }
 
       .customh1 h1 {
@@ -485,6 +521,7 @@
       }
 
       .menu-icon {
+        color: black;
         display: block;
       }
 
@@ -524,13 +561,24 @@
         background-color: #4e4747;
       }
 
+      .customh1 .moto {
+        margin-left: 100px;
+        margin-top: 20px;
+        /* Allow height to adjust based on content */
+      }
+
+      .inlineBP {
+        text-align: left;
+
+      }
+
     }
   </style>
 </head>
 
 <body>
   <div class="navbar">
-    <a class="logo" href="index.html"><img src="logofinal.png" alt="logo" style="height:40px;"></a>
+    <a class="logo" href="index.html"><img src="finalhope.png" alt="logo" style="height:42px; width: 150px;"></a>
     <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
       <li><a class="active" href="index.html">Home</a></li>
@@ -563,27 +611,32 @@
 
 
 
-  <h1>123</h1>
+  <h1 class="idk">123</h1>
   <div class="customh1">
-    <h1>Строителство, продажба, отдаване под наем</h1>
-
+    <div class="moto">
+      <img src="moto.png" width="100%" >
+    </div>
   </div>
 
   <div class="gallery">
     <div class="info">
 
-      <h1>Апартаменти, къщи, търговски помещения за продажба директно от строителя Велинград</h1>
-      <p>Строителна фирма Металика строй ЕООД Велинград, продава апартаменти, къщи и търговски помещения НОВО
-        СТРОИТЕЛСТВО
-        директно от инвеститора. Вижте всички имоти</p>
+      <h1>Апартаменти, търговски помещения за продажба, отдаване под наем, директно от строителя, Велинград </h1>
+      <ul class="inlineBP">
+        <li>Обекти в продажба</li>
+        <li>Почивка и отдих</li>
+        <li>Отдаване под наем</li>
+      </ul>
       <a class="gallery1" href="Sgrada1.html">
         <img src="мазна.png" alt="mazna" width="600" height="650">
+
       </a>
       <a class="gallery2" href="Sgrada2.html">
         <img src="Perry_the_Platypus.png" alt="perry" width="600" height="650">
+
       </a>
       <div class="button-container">
-        <a href="Buildings.html" class="buttons button1"><span>Вижте всички сгради</span></a>
+        <a href="Buildings.html" class="buttons button1"><span>Виж всички сгради</span></a>
       </div>
     </div>
   </div>
@@ -593,13 +646,11 @@
       <h1>За нас</h1>
       <hr color="black" width="150px" align="left">
       <p class="About_us_para">
-        Под логото „Металика” стоят две от най сериозните фирми в своя бранш – „Балканка” ЕООД, „Металика Строй”
-        ЕООД.<br>
-        Още от самото им създаване, дейността на фирмите се ориентира в търговията с черни и цветни метали, арматура и
-        <br>
-        арматурни заготовки, узлуги с механизация, производство на бетонови разтвори, строителство и продажба на сгради
-        <br>
-        и еднофимилни къщи,изграждане на сгради на обещетение,продажба на имоти.<br>
+        Фирма <span style="font-weight: bold;">Danielis stroy</span> е с доказан професионален опит в планирането и
+        цялостното изграждане на жилищни сгради, както и в допълнителни дейности - полагане на подови покрития,
+        изпълнение на различни видове строително-монтажни работи от крайните фази на строителния процес и др. Добрата
+        строителна практика се постига благодарение на отлично подготвен екип и сътрудничество с партньори със сходни
+        високи критерии за качество. <span style="font-weight: bold;"> Цените на нашите услуги са привлекателни!</span>
       </p>
     </div>
 

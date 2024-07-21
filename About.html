@@ -57,22 +57,12 @@
     .active {
       background-color: #04AA6D;
     }
-
     .menu-icon {
       display: none;
       font-size: 24px;
       color: white;
       cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #2e2d2d;
-      width: 120px;
-      width: 100%;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      margin-left: 10px;
     }
 
     .dropdownphone {
@@ -93,9 +83,22 @@
       display: block;
       text-align: left;
     }
-    .dropdownphone a:hover{
+
+    .dropdownphone a:hover {
       background-color: #575757;
     }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2e2d2d;
+      min-width: 120px;
+      max-width: 1000px;
+      width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
 
     .dropdown-content a:hover {
       background-color: #575757;
@@ -108,8 +111,11 @@
       border: none;
       cursor: pointer;
       font-size: 16px;
+      min-width: 120px;
       width: 120px;
+      max-width: 1000px;
     }
+
     .dropbtn:hover {
       background-color: #575757;
     }
@@ -118,7 +124,7 @@
       display: block;
     }
 
-    .dropmenu{
+    .dropmenu {
       position: relative;
       display: inline-block;
       width: 120px;
@@ -131,8 +137,20 @@
       background-position: center;
       height: 500px; /* Set a fixed height for the image container */
       margin-top: 20px;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 12px;
     }
+    .text{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #04AA6D;
+      border-radius: 12px;
+      padding: 16px 16px;
+      margin-top: 25px;
+      margin-left: 15px;
+      margin-right: 50px;
 
+    }
     @media only screen and (min-width: 1024px) {
       .navbar {
         padding: 10px 16px;
@@ -163,35 +181,39 @@
       .dropdownphone {
         display: none;
         position: absolute;
-        width: 100%;
         top: 100%;
         right: 0;
+        background-color: #4e4747;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
       }
 
-      .dropdown-content{
+      .dropmenu.dropdown-content {
+        display: none;
+        position: relative;
+        background-color: #4e4747;
         width: 100%;
+      }
+
+      .dropmenu.show .dropdown-content {
+        display: block;
+        /* Show dropdown content when 'show' class is added */
+      }
+
+      .dropdown-content {
         position: static;
-        box-shadow: none;
-        background-color: #575757;
-      }
-
-      .dropmenu {
-        width: 100%;
+        background-color: #ec0b0b;
+        width: 510px;
+        display: none;
       }
 
       .dropbtn {
         text-align: left;
-        width: 100%;
+        width: 510px;
         background-color: #4e4747;
       }
 
-      .dropmenu:hover .dropdown-content {
-        display: none;
-      }
-
-      .dropdown-content.show {
-        display: block;
-      }
     }
   </style>
 </head>
@@ -199,7 +221,7 @@
 <body>
 
   <div class="navbar">
-    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <a class="logo" href="index.html"><img src="logofinal.png" alt="logo" style="height:40px;"></a>
     <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
       <li><a href="index.html">Home</a></li>
@@ -237,14 +259,29 @@
 
   <div class="image"></div>
 
-  <div class="text"></div>
+  <div class="text">
+    <p class="header">Фирмата Danielis Stroy</p>
+    <a class="littleInfo">Регистрирана през 2020 год. Съгласно издадените удостоверения извършва строежи на жилищни сгради, прекарване на водопровод и канализации, обзавеждане до ключ. В основа на фирмената ни политика са опринципите:<br>
+    <ul class="bulletPoints">
+      <li>Конкретност: Спазване на всички поети ангажименти и срокове. </li>
+      <li>Качество: Срочно и качествено изпълнение на строителните дейности</li>
+      <li>Отговорност: Прилагане на вътрешно-фирмен контрол за постигане на по-добро качество от началото на изпълнение на проекта до пълната му реализация!</li>
+      <li>Успешност: На 100% успеваемост в продажбите, и удоволетворяемост??? на клиентите.</li>
+      <li>Прецизност:</li>
+      <li>Удоволетвореност : Максимално удоволетворяване на нуждите на клиентите и пазара.</li>
+    </ul>
+    </a>
+  </div>
 
   <script>
     function toggleDropdown() {
+      var navItems = document.querySelector('.nav-items');
       var dropdown = document.getElementById("dropdown-menu");
-      if (dropdown.style.display === "block") {
+      if (navItems.classList.contains('show')) {
+        navItems.classList.remove('show');
         dropdown.style.display = "none";
       } else {
+        navItems.classList.add('show');
         dropdown.style.display = "block";
       }
     }
@@ -256,24 +293,6 @@
       }
     });
 
-    document.querySelectorAll('.dropdownphone .dropbtn').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.stopPropagation();
-        var dropdownContent = this.nextElementSibling;
-        dropdownContent.classList.toggle('show');
-      });
-    });
-
-    document.addEventListener('click', function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(function(dropdown) {
-          if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-          }
-        });
-      }
-    });
   </script>
 </body>
 </html>
