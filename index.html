@@ -560,38 +560,7 @@
     </div>
   </div>
 
-  <!-- Your existing content -->
-
-  <script>
-    function toggleDropdown() {
-      var dropdown = document.getElementById("dropdown-menu");
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdowns = document.querySelectorAll('.dropmenu');
-      dropdowns.forEach(function (menu) {
-        menu.addEventListener('click', function (event) {
-          event.stopPropagation();
-          var dropdownContent = this.querySelector('.dropdown-content');
-          dropdownContent.classList.toggle('show');
-        });
-      });
-
-      document.addEventListener('click', function (event) {
-        var dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(function (dropdown) {
-          if (dropdown.classList.contains('show') && !event.target.closest('.dropmenu')) {
-            dropdown.classList.remove('show');
-          }
-        });
-      });
-    });
-  </script>
+ 
   <h1>123</h1>
   <div class="customh1">
     <h1>Строителство, продажба, отдаване под наем</h1>
