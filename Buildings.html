@@ -7,25 +7,31 @@
     body {
       background-color: rgb(158, 109, 97);
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding-top: 70px; /* Adjust based on your navbar height */
     }
 
     .navbar {
       display: flex;
       align-items: center;
-      background-color: #333;
+      background-color: #ffffff;
       position: fixed;
       top: 0;
       width: 100%;
       padding: 10px 16px;
       box-sizing: border-box;
       z-index: 1000;
+      border-bottom: 0px solid white;
     }
 
     .logo {
+      margin-left: 9px;
       margin-right: auto;
+      border-radius: 8px;
+      mix-blend-mode: multiply;
     }
+
+
 
     .nav-items {
       display: flex;
@@ -34,27 +40,37 @@
       margin: 0;
       padding: 0;
       flex-grow: 1;
+
+
     }
 
     .nav-items li {
       padding: 0;
+
     }
 
     .nav-items li a {
       display: block;
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
+      background-color: #a87c7c;
+      /* Default background color */
+      color: white;
     }
 
     .nav-items li a:hover:not(.active) {
-      background-color: #111;
+      background-color: #c76464;
+      /* Hover background color */
     }
 
-    .active {
+    /* Ensure this rule is listed after the other rules */
+    .nav-items li a.active {
       background-color: #04AA6D;
+      /* Active background color */
     }
+
 
     .menu-icon {
       display: none;
@@ -104,7 +120,7 @@
     }
 
     .dropbtn {
-      background-color: #252323;
+      background-color: #a87c7c;
       color: white;
       padding: 14px 16px;
       border: none;
@@ -113,10 +129,11 @@
       min-width: 120px;
       width: 120px;
       max-width: 1000px;
+      padding-bottom: 14px;
     }
 
     .dropbtn:hover {
-      background-color: #575757;
+      background-color: #c76464;
     }
 
     .dropmenu:hover .dropdown-content {
@@ -128,6 +145,7 @@
       display: inline-block;
       width: 120px;
     }
+
     .gallery {
       text-align: center;
       padding: 20px 16px; /* Adjust padding as needed */
@@ -184,26 +202,40 @@
     }
 
     .icon-container {
-      background-color: bisque;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      /* Use flexbox to align icons horizontally */
+      justify-content: space-around;
+      /* Distribute space evenly between icons */
       align-items: center;
+      /* Center-align items vertically */
       padding: 20px;
-      margin: 20px;
+      margin: 10px 0;
+      /* Adjust vertical margin as needed */
     }
 
+    /* Icon Styles */
     .icon {
       text-align: center;
       color: #333;
       font-size: 24px;
-      margin: 10px;
-      width: 200px;
+      /* Increase font size for larger icons */
+      flex: 1;
+      /* Allow icons to expand and take available space */
     }
 
     .icon i {
       font-size: 50px;
+      /* Increase the icon size */
       margin-bottom: 10px;
+      /* Space between icon and text */
+    }
+
+    .icon p {
+      margin: 0;
+      /* Remove default margins from paragraph */
+      font-size: 16px;
+      /* Adjust font size for readability */
+      font-weight: bold;
     }
 
     @media only screen and (min-width: 1024px) {
@@ -283,6 +315,7 @@
       }
 
       .menu-icon {
+        color:black;
         display: block;
       }
 
@@ -329,11 +362,11 @@
 
 <body>
   <div class="navbar">
-    <a class="logo" href="index.html"><img src="8748_gigachad.png" alt="logo" style="height:40px;"></a>
+    <a class="logo" href="index.html"><img src="finalhope.png" alt="logo" style="height:42px; width: 150px;"></a>
     <span class="menu-icon" onclick="toggleDropdown()"><i class="fa fa-bars"></i></span>
     <ul class="nav-items">
       <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="About.html">About Us</a></li>
+      <li><a href="About.html">About Us</a></li>
       <li class="dropmenu">
         <button class="dropbtn">Dropdown
           <i class="fa fa-caret-down"></i>
@@ -344,12 +377,12 @@
           <a href="#">Link 3</a>
         </div>
       </li>
-      <li><a href="Buildings.html">Buildings</a></li>
+      <li><a class="active" href="Buildings.html">Buildings</a></li>
     </ul>
 
     <div class="dropdownphone" id="dropdown-menu">
       <a href="index.html">Home</a>
-      <a class="active" href="About.html">About Us</a>
+      <a  href="About.html">About Us</a>
       <li class="dropmenu">
         <button class="dropbtn">Dropdown
           <i class="fa fa-caret-down"></i>
@@ -360,7 +393,7 @@
           <a href="#">Link 3</a>
         </div>
       </li>
-      <a href="Buildings.html">Buildings</a>
+      <a class="active" href="Buildings.html">Buildings</a>
       
     </div>
   </div>
