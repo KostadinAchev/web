@@ -98,8 +98,12 @@
       display: block;
       text-align: left;
     }
+    
+    .dropdownphone a.active{
+      background-color: #04AA6D;
+    }
 
-    .dropdownphone a:hover {
+    .dropdownphone a:hover:not(.active) {
       background-color: #575757;
     }
 
@@ -286,6 +290,7 @@
 
       .icon {
         font-size: 20px;
+        margin-bottom: 19px;
       }
 
       .icon i {
@@ -415,15 +420,15 @@
     <div class="icon-container">
       <div class="icon">
         <i class="fa fa-phone"></i>
-        <p>Номер за връзка:<br>0876842484</p>
+        <p style="font-size: 15px;">Номер за връзка:<br>0876842484</p>
       </div>
       <div class="icon">
         <i class="fa fa-envelope"></i>
-        <p>e-mail:<br>neshto@abv.bg</p>
+        <p style="font-size: 15px;">e-mail:<br>neshto@abv.bg</p>
       </div>
       <div class="icon">
         <i class="fa fa-bed"></i>
-        <p>Адрес:<br>Дойран 18</p>
+        <p style="font-size: 15px;">Адрес:<br>Дойран 18</p>
       </div>
     </div>
   </div>

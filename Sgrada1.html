@@ -12,7 +12,6 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-
     .navbar {
       display: flex;
       align-items: center;
@@ -31,17 +30,12 @@
       /* Pushes nav-items to the center */
     }
 
-
-
     .logo {
       margin-left: 9px;
       margin-right: auto;
       border-radius: 8px;
       mix-blend-mode: multiply;
     }
-
-
-
 
     .nav-items {
       display: flex;
@@ -50,13 +44,10 @@
       margin: 0;
       padding: 0;
       flex-grow: 1;
-
-
     }
 
     .nav-items li {
       padding: 0;
-
     }
 
     .nav-items li a {
@@ -80,7 +71,6 @@
       background-color: #04AA6D;
       /* Active background color */
     }
-
 
     .menu-icon {
       display: none;
@@ -109,7 +99,11 @@
       text-align: left;
     }
 
-    .dropdownphone a:hover {
+    .dropdownphone a.active {
+      background-color: #04AA6D;
+    }
+
+    .dropdownphone a:hover:not(.active) {
       background-color: #575757;
     }
 
@@ -123,7 +117,6 @@
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
-
 
     .dropdown-content a:hover {
       background-color: #575757;
@@ -156,7 +149,6 @@
       width: 120px;
     }
 
-    /* Contact info section styles */
     .Contact_info {
       background-color: bisque;
       margin: 10px;
@@ -187,7 +179,6 @@
       /* Adjust vertical margin as needed */
     }
 
-    /* Icon Styles */
     .icon {
       text-align: center;
       color: #333;
@@ -212,23 +203,149 @@
       font-weight: bold;
     }
 
-      @media only screen and (min-width: 1024px) {
+    .Architecture {
+      margin: 10px;
+      margin-left: 30px;
+    }
+
+    .Staq_1 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .text1 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .Staq_2 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .text2 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .Staq_3 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .text3 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .Sgrada1_pic {
+      padding: 10px;
+      background-color: rgb(133, 50, 50);
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .Gallery {
+      display: flex;
+      margin: 10px;
+      gap: 10px;
+    }
+
+    .Gallery img {
+      cursor: pointer;
+    }
+
+    .textSgrada {
+      font-weight: bold;
+      font-size: large;
+      text-align: center;
+    }
+    .lightbox-arrow {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    .lightbox-arrow:hover {
+      color: #bbb;
+    }
+
+    .lightbox-arrow-left {
+      left: 0;
+    }
+
+    .lightbox-arrow-right {
+      right: 0;
+    }
+
+    @media only screen and (min-width: 1024px) {
       .navbar {
-        padding: 10px 16px;
+        padding: 10px 10px;
+        /* Adjust padding */
       }
 
-      .menu-icon {
-        display: none;
+      .gallery {
+        padding: 10px;
+        margin: 10px;
       }
 
-      .dropdownphone {
-        display: none;
+      .icon-container {
+        flex-direction: row;
       }
     }
 
     @media only screen and (max-width: 768px) {
-      .image {
-        height: 280px;
+      .info {
+        padding-top: 120px;
+        /* Adjust padding for info section */
+      }
+
+      .customh1 {
+        font-size: 24px;
+        /* Decrease font size for customh1 */
+      }
+
+      .gallery img {
+        margin-bottom: 10px;
+        /* Adjust margin for smaller screens */
+      }
+
+      .icon {
+        font-size: 20px;
+        margin-bottom: 19px;
+        /* Decrease icon size for smaller screens */
+      }
+
+      .icon i {
+        font-size: 40px;
+        /* Decrease icon size for smaller screens */
+      }
+
+      .icon-container {
+        flex-direction: column;
+      }
+
+      .testing {
+        flex-direction: column;
+      }
+
+      .About_us {
+        width: 615px;
+      }
+
+      .Contact_info {
+        width: 645px;
       }
 
       .nav-items {
@@ -236,7 +353,6 @@
       }
 
       .menu-icon {
-        color:black;
         display: block;
       }
 
@@ -273,9 +389,121 @@
       .dropbtn {
         text-align: left;
         width: 510px;
+        padding: 16px;
         background-color: #4e4747;
       }
+    }
 
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-items.show {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .dropbtn {
+        width: 100%;
+      }
+
+      .dropdown-content {
+        width: 100%;
+        position: static;
+      }
+
+      .navbar a,
+      .dropdown-content a {
+        text-align: left;
+      }
+
+      .Contact_info,
+      .icon-container {
+        width: 100%;
+        /* Ensure full width on small screens */
+      }
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+    }
+
+    .lightbox-arrow {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    .lightbox-arrow:hover {
+      color: #bbb;
+    }
+
+    .lightbox-arrow-left {
+      left: 0;
+    }
+
+    .lightbox-arrow-right {
+      right: 0;
     }
   </style>
 </head>
@@ -297,9 +525,8 @@
           <a href="#">Link 3</a>
         </div>
       </li>
-      <li><a class="active" href="Buildings.html">Buildings</a></li>
+      <li><a href="Buildings.html">Buildings</a></li>
     </ul>
-
     <div class="dropdownphone" id="dropdown-menu">
       <a href="index.html">Home</a>
       <a href="About.html">About Us</a>
@@ -313,31 +540,79 @@
           <a href="#">Link 3</a>
         </div>
       </li>
-      <a class="active" href="Buildings.html">Buildings</a>
-
+      <a href="Buildings.html">Buildings</a>
     </div>
   </div>
 
+  <h1 class="idk">123</h1>
+  <div class="Sgrada1_pic">
+    <div class="textSgrada">
+      <p>Снимки на сградата</p>
+    </div>
+    <div class="Gallery">
+      <img src="pexels-photo-106399.jpeg" alt="Image 1" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
+      <img src="isagi.jpg" alt="Image 2" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
+      <img src="8748_gigachad.png" alt="Image 3" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
+      <img src="Perry_the_Platypus.png" alt="Image 3" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
+    </div>
+  </div>
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <a class="lightbox-arrow lightbox-arrow-left" onclick="changeImage(-1)">&#10094;</a>
+    <a class="lightbox-arrow lightbox-arrow-right" onclick="changeImage(1)">&#10095;</a>
+  </div>
+  <div class="Architecture">
+    <div class="Staq_1">
+      <div class="pictures1">
+        <img src="мазна.png" height="300px" width="300px">
+      </div>
+      <div class="text1">
+        <hr style="color: green; width: 500px;">
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+      </div>
+    </div>
+    <div class="Staq_2">
+      <div class="pictures2">
+        <img src="pexels-photo-106399.jpeg" height="300px" width="300">
+      </div>
+      <div class="text2">
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+      </div>
+    </div>
+    <div class="Staq_3">
+      <div class="pictures3">
+        <img src="Perry_the_Platypus.png" height="300px" width="300">
+      </div>
+      <div class="text3">
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+      </div>
+    </div>
+  </div>
   <div class="Contact_info">
     <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
     <hr color="black" width="400px" align="center">
     <div class="icon-container">
       <div class="icon">
         <i class="fa fa-phone"></i>
-        <p>Номер за връзка:<br>0876842484</p>
+        <p style="font-size: 15px;">Номер за връзка:<br>0876842484</p>
       </div>
       <div class="icon">
         <i class="fa fa-envelope"></i>
-        <p>e-mail:<br>neshto@abv.bg</p>
+        <p style="font-size: 15px;">e-mail:<br>neshto@abv.bg</p>
       </div>
       <div class="icon">
         <i class="fa fa-bed"></i>
-        <p>Адрес:<br>Дойран 18</p>
+        <p style="font-size: 15px;">Адрес:<br>Дойран 18</p>
       </div>
     </div>
   </div>
 
   <script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.Gallery img');
+
     function toggleDropdown() {
       var navItems = document.querySelector('.nav-items');
       var dropdown = document.getElementById("dropdown-menu");
@@ -357,6 +632,49 @@
       }
     });
 
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+
+      lightboxImg.src = img.src;
+      lightboxCaption.innerHTML = img.alt;
+      lightbox.style.display = 'block';
+
+      currentImageIndex = Array.from(images).indexOf(img);
+      document.addEventListener('keydown', handleKeyDown);
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      }
+      const img = images[currentImageIndex];
+      openLightbox(img);
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (event.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    }
+
+    window.onclick = function (event) {
+      const lightbox = document.getElementById('lightbox');
+      if (event.target == lightbox) {
+        closeLightbox();
+      }
+    }
   </script>
 </body>
 
