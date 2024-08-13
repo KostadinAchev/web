@@ -12,6 +12,9 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
+    .idk {
+      visibility: none;
+    }
     .navbar {
       display: flex;
       align-items: center;
@@ -24,13 +27,7 @@
       z-index: 1000;
       border-bottom: 0px solid white;
     }
-
-    .logo {
-      margin-right: auto;
-      /* Pushes nav-items to the center */
-    }
-
-    .logo {
+.logo {
       margin-left: 9px;
       margin-right: auto;
       border-radius: 8px;
@@ -205,18 +202,21 @@
 
     .Architecture {
       margin: 10px;
-      margin-left: 30px;
+      margin-left: 12px;
     }
 
     .Staq_1 {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+      
     }
-
     .text1 {
       margin-left: 10px;
       font-size: 20px;
+    }
+    .text1.hr{
+      width: 500px;
     }
 
     .Staq_2 {
@@ -252,6 +252,8 @@
       display: flex;
       margin: 10px;
       gap: 10px;
+      overflow: auto;
+      white-space: nowrap;
     }
 
     .Gallery img {
@@ -303,12 +305,21 @@
       .icon-container {
         flex-direction: row;
       }
+      .dropdownphone {
+        display: none;
+      }
     }
 
     @media only screen and (max-width: 768px) {
       .info {
         padding-top: 120px;
         /* Adjust padding for info section */
+      }
+      .text1.hr{
+        width:50px;
+      }
+      .navbar{
+        width: 500px;
       }
 
       .customh1 {
@@ -334,6 +345,11 @@
 
       .icon-container {
         flex-direction: column;
+        /* Stack icons vertically on mobile */
+        align-items: center;
+        /* Center-align icons horizontally */
+        text-align: center;
+        /* Center-align text under icons */
       }
 
       .testing {
@@ -345,7 +361,13 @@
       }
 
       .Contact_info {
-        width: 645px;
+        width: 90%;
+        /* Ensure consistent width */
+        margin: 10px auto;
+        /* Center-align and provide consistent margin */
+        padding: 16px;
+        box-sizing: border-box;
+        /* Ensure padding is included in width */
       }
 
       .nav-items {
@@ -353,9 +375,9 @@
       }
 
       .menu-icon {
+        color: black;
         display: block;
       }
-
       .dropdownphone {
         display: none;
         position: absolute;
@@ -389,47 +411,11 @@
       .dropbtn {
         text-align: left;
         width: 510px;
-        padding: 16px;
         background-color: #4e4747;
       }
     }
 
-    @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-
-      .nav-items.show {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .dropbtn {
-        width: 100%;
-      }
-
-      .dropdown-content {
-        width: 100%;
-        position: static;
-      }
-
-      .navbar a,
-      .dropdown-content a {
-        text-align: left;
-      }
-
-      .Contact_info,
-      .icon-container {
-        width: 100%;
-        /* Ensure full width on small screens */
-      }
-    }
+   
 
     /* Lightbox styles */
     .lightbox {
@@ -569,7 +555,7 @@
         <img src="мазна.png" height="300px" width="300px">
       </div>
       <div class="text1">
-        <hr style="color: green; width: 500px;">
+        <hr style="color: green;">
         <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
       </div>
     </div>
