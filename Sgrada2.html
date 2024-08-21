@@ -15,6 +15,7 @@
     .idk {
       visibility: none;
     }
+
     .navbar {
       display: flex;
       align-items: center;
@@ -27,7 +28,8 @@
       z-index: 1000;
       border-bottom: 0px solid white;
     }
-.logo {
+
+    .logo {
       margin-left: 9px;
       margin-right: auto;
       border-radius: 8px;
@@ -220,13 +222,15 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      
+
     }
+
     .text1 {
       margin-left: 10px;
       font-size: 20px;
     }
-    .text1.hr{
+
+    .text1.hr {
       width: 500px;
     }
 
@@ -276,6 +280,7 @@
       font-size: large;
       text-align: center;
     }
+
     .lightbox-arrow {
       cursor: pointer;
       position: absolute;
@@ -316,6 +321,7 @@
       .icon-container {
         flex-direction: row;
       }
+
       .dropdownphone {
         display: none;
       }
@@ -326,22 +332,32 @@
         padding-top: 120px;
         /* Adjust padding for info section */
       }
-      .Staq_1, .Staq_2, .Staq_3 {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
-    text-align: center; /* Center align text */
-  }
 
-  .Staq_1 .text1,
-  .Staq_2 .text2,
-  .Staq_3 .text3 {
-    margin-left: 0; /* Remove left margin */
-    margin-top: 10px; /* Add some space above text */
-  }
-      .text1.hr{
-        width:50px;
+      .Staq_1,
+      .Staq_2,
+      .Staq_3 {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center align items */
+        text-align: center;
+        /* Center align text */
       }
-      .navbar{
+
+      .Staq_1 .text1,
+      .Staq_2 .text2,
+      .Staq_3 .text3 {
+        margin-left: 0;
+        /* Remove left margin */
+        margin-top: 10px;
+        /* Add some space above text */
+      }
+
+      .text1.hr {
+        width: 50px;
+      }
+
+      .navbar {
         width: 100%;
       }
 
@@ -401,6 +417,7 @@
         color: black;
         display: block;
       }
+
       .dropdownphone {
         display: none;
         position: absolute;
@@ -438,7 +455,7 @@
       }
     }
 
-   
+
 
     /* Lightbox styles */
     .lightbox {
@@ -514,6 +531,61 @@
     .lightbox-arrow-right {
       right: 0;
     }
+
+
+    /* Style for the zoom-in overlay */
+    .zoomin {
+      display: none;
+      /* Hide the zoom-in container by default */
+      position: fixed;
+      /* Fixes the position relative to the viewport */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Semi-transparent black background */
+      z-index: 1000;
+      /* High z-index to make sure it appears in front */
+      overflow: auto;
+      /* Allows scrolling if content overflows */
+    }
+
+    /* Style for the zoomed-in image */
+    .zoomin-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Style for the close button */
+    .zoomin-close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      /* Make sure the close button is above the image */
+    }
+
+    /* Style for the caption */
+    .zoomin-caption {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Background for caption */
+      padding: 5px;
+    }
   </style>
 </head>
 
@@ -559,7 +631,8 @@
       <p>Снимки на сградата</p>
     </div>
     <div class="Gallery">
-      <img src="pexels-photo-106399.jpeg" alt="Image 1" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
+      <img src="pexels-photo-106399.jpeg" alt="Image 1" style="width: 300px; height: 300px;"
+        onclick="openLightbox(this)">
       <img src="isagi.jpg" alt="Image 2" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
       <img src="8748_gigachad.png" alt="Image 3" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
       <img src="Perry_the_Platypus.png" alt="Image 3" style="width: 300px; height: 300px;" onclick="openLightbox(this)">
@@ -572,32 +645,54 @@
     <a class="lightbox-arrow lightbox-arrow-left" onclick="changeImage(-1)">&#10094;</a>
     <a class="lightbox-arrow lightbox-arrow-right" onclick="changeImage(1)">&#10095;</a>
   </div>
+
+  <div id="zoomin" class="zoomin">
+    <span class="zoomin-close" onclick="closeZoomin()">&times;</span>
+    <img class="zoomin-content" id="zoomin-img">
+    <div class="zoomin-caption" id="zoomin-caption"></div>
+  </div>
+
+
+
   <div class="Architecture">
     <div class="Staq_1">
       <div class="pictures1">
-        <img src="мазна.png" height="300px" width="300px">
+        <img src="първи етаж.png" height="300px" width="300px" onclick="zoomin(this)">
       </div>
       <div class="text1">
         <hr style="color: green;">
-        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента:
+          мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><a href="първи етаж.pdf" download style="color: black;"><p> Изтегли снимката на схемата</a><br></p>
       </div>
     </div>
     <div class="Staq_2">
       <div class="pictures2">
-        <img src="pexels-photo-106399.jpeg" height="300px" width="300">
+        <img src="втори етаж.png" height="300px" width="300" onclick="zoomin(this)">
       </div>
       <div class="text2">
         <hr style="color: green;">
-        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента:
+          мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><a href="втори етаж.pdf" download style="color: black;"><p> Изтегли снимката на схемата</a><br></p>
       </div>
     </div>
     <div class="Staq_3">
       <div class="pictures3">
-        <img src="Perry_the_Platypus.png" height="300px" width="300">
+        <img src="трети етаж.png" height="300px" width="300" onclick="zoomin(this)">
       </div>
       <div class="text3">
         <hr style="color: green;">
-        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента: мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><br></p>
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента:
+          мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><a href="трети етаж.pdf" download style="color: black;"><p> Изтегли снимката на схемата</a><br></p>
+      </div>
+    </div>
+    <div class="Staq_3">
+      <div class="pictures3">
+        <img src="четвърти етаж.png" height="300px" width="300" onclick="zoomin(this)">
+      </div>
+      <div class="text3">
+        <hr style="color: green;">
+        <p>Цена:12312512лв<br>Местоположение: Велинград бул.нещо си<br>Вид на апартамента:
+          мезонет<br>Квадратура:150кв<sup>2</sup><br>Вид строителство:<br>Етаж:<br>Брой стаи: 3<br><a href="четвърти етаж.pdf" download style="color: black;"><p> Изтегли снимката на схемата</a><br></p>
       </div>
     </div>
   </div>
@@ -686,6 +781,49 @@
         closeLightbox();
       }
     }
+    function zoomin(img) {
+    const zoomin = document.getElementById('zoomin');
+    const zoominImg = document.getElementById('zoomin-img');
+    const zoominCaption = document.getElementById('zoomin-caption');
+
+    zoominImg.src = img.src;
+    zoominCaption.innerHTML = img.alt;
+    zoomin.style.display = 'block';
+
+    // Add a keydown event listener to close zooming on 'Escape' key press
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Add click event listener to close when clicking outside the zoomed image
+    zoomin.addEventListener('click', closeIfOutsideImage);
+  }
+
+  function closeZoomin() {
+    const zoomin = document.getElementById('zoomin');
+    zoomin.style.display = 'none';
+
+    // Remove the keydown event listener when closing
+    document.removeEventListener('keydown', handleKeyDown);
+
+    // Remove the click event listener for outside click
+    zoomin.removeEventListener('click', closeIfOutsideImage);
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === 'Escape') {
+      closeZoomin();
+    }
+  }
+
+  function closeIfOutsideImage(event) {
+    const zoominImg = document.getElementById('zoomin-img');
+
+    // If the click is outside the image, close the zoomed view
+    if (!zoominImg.contains(event.target)) {
+      closeZoomin();
+    }
+  }
+
+
   </script>
 </body>
 
