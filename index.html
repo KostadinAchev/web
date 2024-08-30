@@ -9,13 +9,14 @@
   <style>
     /* General Styles */
     body {
-      background-color: #333;
+      background-color: rgb(185, 185, 185);
       margin: 0;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .idk {
       visibility: none;
+      
     }
 
     /* Navbar Styles */
@@ -63,19 +64,19 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      background-color: #a87c7c;
+      background-color: rgb(90, 90, 90);
       /* Default background color */
       color: white;
     }
 
     .nav-items li a:hover:not(.active) {
-      background-color: #c76464;
+      background-color: rgb(129, 54, 54);
       /* Hover background color */
     }
 
     /* Ensure this rule is listed after the other rules */
     .nav-items li a.active {
-      background-color: #04AA6D;
+      background-color: rgb(129, 2, 2);
       /* Active background color */
     }
 
@@ -160,7 +161,7 @@
 
     /* Main Content Styles */
     .info {
-      background-color: rgb(172, 186, 204);
+      background-color: rgb(128, 128, 128);
       border-radius: 8px;
       text-align: center;
       font-family: Arial, sans-serif;
@@ -209,7 +210,7 @@
 
     /* Gallery Styles */
     .gallery {
-      background-color: white;
+      background-color: #ffffff;
       padding: 20px;
       margin: 20px;
       border-radius: 8px;
@@ -251,13 +252,36 @@
       /* Remove any extra space below the image */
     }
 
+    .gallery1,
+    .gallery2{
+      position:relative;
+      display: inline-block;
+    }
+    .text-overlay{
+      
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: bisque;
+      color: rgb(0, 0, 0);
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      padding-top: 5px;
+      box-sizing: border-box;
+    
+    }
+    
+    .inlineBP{
+      list-style-type: none;
+    }
     .inlineBP li {
       float: left;
-      margin: 0 20px;
       font-weight: bold;
       font-size: 26px;
       margin-bottom: 1cm;
-      margin-left: 3cm;
+      margin-left: 2cm;
     }
 
 
@@ -271,7 +295,7 @@
     .buttons {
       display: inline-block;
       border-radius: 12px;
-      background-color: #ff7f7f;
+      background-color: rgb(129, 2, 2);
       border: none;
       text-align: center;
       font-size: 16px;
@@ -319,7 +343,7 @@
 
     /* About Us Section Styles */
     .About_us {
-      background-color: rgba(165, 189, 171, 0.973);
+      background-color: rgba(201, 226, 207, 0.973);
       border-radius: 12px;
       width: 890px;
       /* Adjust width to 100% on mobile */
@@ -341,9 +365,11 @@
     }
 
     .About_us_para {
-      color: #333;
+      font-size: 20px;
+      color: #161616;
       font-weight: 100;
     }
+    
 
     /* Contact Info Section Styles */
     .Contact_info {
@@ -411,6 +437,8 @@
       /* Adjust font size for readability */
       font-weight: bold;
     }
+    
+    
      
     /* Responsive Styles */
     @media (min-width: 769px) and (max-width: 1366px) {
@@ -666,16 +694,18 @@
 
       <h1>Апартаменти, търговски помещения за продажба, отдаване под наем, директно от строителя, Велинград </h1>
       <ul class="inlineBP">
-        <li>Обекти в продажба</li>
-        <li>Почивка и отдих</li>
-        <li>Отдаване под наем</li>
+        <li><span>&#10148;</span> Обекти в продажба</li>
+        <li><span>&#10148;</span> Почивка и отдих</li>
+        <li><span>&#10148;</span> Отдаване под наем</li>
       </ul>
       <a class="gallery1" href="Sgrada1.html">
         <img src="sgrada 1.jpg" alt="mazna" width="600" height="500">
+        <div class="text-overlay"><span style="font-weight: bold;">Сграда 1</span><br>кв. Лъджене, ул. "Свети Никола" 1, 4600 Велинград</div>
 
       </a>
       <a class="gallery2" href="Sgrada2.html">
         <img src="sgrada 2.jpg" alt="perry" width="600" height="500">
+        <div class="text-overlay"><span style="font-weight: bold;">Сграда 2</span><br>кв. Чепино, ул. "Свети Димитър" 8, 4600 Велинград</div>
 
       </a>
       <div class="button-container">
@@ -687,19 +717,19 @@
   <div class="testing">
     <div class="About_us">
       <h1>За нас</h1>
-      <hr color="black" width="150px" align="left">
+      <hr style="width: 150px; color: rgb(129, 2, 2);" width="150px" align="left">
       <p class="About_us_para">
-        Фирма <span style="font-weight: bold;">Danielis stroy</span> е с доказан професионален опит в планирането и
+        Фирма <span style="font-weight: bold; color: rgb(129, 2, 2);">Danielis stroy</span> е с доказан професионален опит в планирането и
         цялостното изграждане на жилищни сгради, както и в допълнителни дейности - полагане на подови покрития,
         изпълнение на различни видове строително-монтажни работи от крайните фази на строителния процес и др. Добрата
         строителна практика се постига благодарение на отлично подготвен екип и сътрудничество с партньори със сходни
-        високи критерии за качество. <span style="font-weight: bold;"> Цените на нашите услуги са привлекателни!</span>
+        високи критерии за качество. <span style="font-weight: bold; color: rgb(129, 2, 2);"> Цените на нашите услуги са привлекателни!</span>
       </p>
     </div>
 
     <div class="Contact_info">
       <h1 class="h1contact" align="center">Можете да се свържете с нас чрез</h1>
-      <hr color="black" width="400px" align="center">
+      <hr style="width: 400px;   color:rgb(129, 2, 2);" width="400px" align="center">
       <div class="icon-container">
         <div class="icon">
           <i class="fa fa-phone"></i>

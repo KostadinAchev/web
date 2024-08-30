@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="icon" type="image/png" href="finalhope.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background-color: rgb(158, 109, 97);
+      background-color: rgb(65, 44, 44);
       margin: 0;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      padding-top: 70px; /* Adjust based on your navbar height */
+      padding-top: 70px;
+      /* Adjust based on your navbar height */
     }
 
     .navbar {
@@ -56,19 +58,19 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      background-color: #a87c7c;
+      background-color: rgb(90, 90, 90);
       /* Default background color */
       color: white;
     }
 
     .nav-items li a:hover:not(.active) {
-      background-color: #c76464;
+      background-color: rgb(129, 54, 54);
       /* Hover background color */
     }
 
     /* Ensure this rule is listed after the other rules */
     .nav-items li a.active {
-      background-color: #04AA6D;
+      background-color: rgb(129, 2, 2);
       /* Active background color */
     }
 
@@ -99,8 +101,8 @@
       display: block;
       text-align: left;
     }
-    
-    .dropdownphone a.active{
+
+    .dropdownphone a.active {
       background-color: #04AA6D;
     }
 
@@ -153,7 +155,8 @@
 
     .gallery {
       text-align: center;
-      padding: 20px 16px; /* Adjust padding as needed */
+      padding: 20px 16px;
+      /* Adjust padding as needed */
       max-width: 100%;
       position: relative;
     }
@@ -164,32 +167,36 @@
       margin: 15px;
     }
 
+    
+
     .image-container img {
       display: block;
       max-width: 100%;
       transition: transform 0.5s ease-in-out;
     }
-
+    .image-container:hover img {
+      transform: translateY(-50px);
+    }
+    
     .line {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 70px;
-      background-color: red;
-      color: white;
+      background-color: rgb(197, 197, 197);
+      color: rgb(0, 0, 0);
       font-family: Arial, sans-serif;
       font-size: 25px;
       padding-top: 5px;
       box-sizing: border-box;
+      
     }
 
-    .image-container:hover img {
-      transform: translateY(-50px);
-    }
+    
 
     .Contact_info {
-      background-color: bisque;
+      background-color: rgb(207, 184, 154);
       margin: 10px;
       padding: 16px 0;
       border-radius: 12px;
@@ -203,7 +210,8 @@
       font-family: Arial, sans-serif;
       padding: 16px 0 0;
       font-size: 22px;
-      font-weight: lighter;
+      font-weight: bold;
+      color: black;
     }
 
     .icon-container {
@@ -321,9 +329,10 @@
       }
 
       .menu-icon {
-        color:black;
+        color: black;
         display: block;
       }
+
       .Contact_info hr {
         width: 75%;
       }
@@ -365,11 +374,11 @@
       }
 
     }
-    
   </style>
 </head>
 
 <body>
+
   <body>
     <div class="navbar">
       <a class="logo" href="index.html"><img src="finalhope.png" alt="logo" style="height:42px; width: 150px;"></a>
@@ -378,7 +387,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About Us</a></li>
         <li><a href="Apartament.html">Apartament</a></li>
-      <!-- <li class="dropmenu">
+        <!-- <li class="dropmenu">
           <button class="dropbtn">Dropdown
             <i class="fa fa-caret-down"></i>
           </button>
@@ -404,61 +413,62 @@
             <a href="#">Link 3</a>
           </div>
         </li> -->
-        
+
         <a class="active" href="Buildings.html">Buildings</a>
       </div>
     </div>
 
-  <div class="gallery">
-    <a href="Sgrada1.html" class="image-container">
-      <img src="sgrada 1.jpg" alt="mazna" width="600" height="650">
-      <div class="line">НОВА СГРАДА <br> Улица Свети Петър 21</div>
-    </a>
-    <a href="Sgrada2.html" class="image-container">
-      <img src="sgrada 2.jpg" alt="perry" width="600" height="650">
-      <div class="line">НОВА СГРАДА <br> Улица Свети Петър 25</div>
-    </a>
-  </div>
+    <div class="gallery">
+      <a href="Sgrada1.html" class="image-container">
+        <img src="sgrada 1.jpg" alt="mazna" width="600" height="600">
+        <div class="line"><span style="font-weight: bold;">кв. Лъджене, ул. "Свети Никола" 1, 4600 Велинград</span></div>
+      </a>
+      <a href="Sgrada2.html" class="image-container">
+        <img src="sgrada 2.jpg" alt="perry" width="600" height="600">
+        <div class="line"><span style="font-weight: bold;">кв. Чепино, ул. "Свети Димитър" 8, 4600 Велинград</span></div>
+      </a>
+    </div>
 
-  <div class="Contact_info">
-    <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
-    <hr color="black" width="400px" align="center">
-    <div class="icon-container">
-      <div class="icon">
-        <i class="fa fa-phone"></i>
-        <p style="font-size: 15px;">Номер за връзка:<br>0876842484</p>
-      </div>
-      <div class="icon">
-        <i class="fa fa-envelope"></i>
-        <p style="font-size: 15px;">e-mail:<br>neshto@abv.bg</p>
-      </div>
-      <div class="icon">
-        <i class="fa fa-bed"></i>
-        <p style="font-size: 15px;">Адрес:<br>Дойран 18</p>
+    <div class="Contact_info">
+      <h1 class="h1contact">Можете да се свържете с нас чрез:</h1>
+      <hr color="black" width="400px" align="center">
+      <div class="icon-container">
+        <div class="icon">
+          <i class="fa fa-phone"></i>
+          <p style="font-size: 15px;">Номер за връзка:<br>0876842484</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-envelope"></i>
+          <p style="font-size: 15px;">e-mail:<br>neshto@abv.bg</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bed"></i>
+          <p style="font-size: 15px;">Адрес:<br>Дойран 18</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    function toggleDropdown() {
-      var navItems = document.querySelector('.nav-items');
-      var dropdown = document.getElementById("dropdown-menu");
-      if (navItems.classList.contains('show')) {
-        navItems.classList.remove('show');
-        dropdown.style.display = "none";
-      } else {
-        navItems.classList.add('show');
-        dropdown.style.display = "block";
+    <script>
+      function toggleDropdown() {
+        var navItems = document.querySelector('.nav-items');
+        var dropdown = document.getElementById("dropdown-menu");
+        if (navItems.classList.contains('show')) {
+          navItems.classList.remove('show');
+          dropdown.style.display = "none";
+        } else {
+          navItems.classList.add('show');
+          dropdown.style.display = "block";
+        }
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdown = document.getElementById("dropdown-menu");
-      if (!dropdown) {
-        console.error("Dropdown menu not found.");
-      }
-    });
+      document.addEventListener('DOMContentLoaded', function () {
+        var dropdown = document.getElementById("dropdown-menu");
+        if (!dropdown) {
+          console.error("Dropdown menu not found.");
+        }
+      });
 
-  </script>
-</body>
+    </script>
+  </body>
+
 </html>
