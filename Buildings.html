@@ -323,18 +323,17 @@
       .customh1 {
         font-size: 24px;
       }
-
+      
       .gallery {
         width: 90%;
-        margin: 10px auto;
-        padding: 16px;
         box-sizing: border-box;
+        padding: 16px;
+        margin: 10px auto;
+        flex-direction: column;
       }
-
+      
       .gallery img {
-        margin-bottom: 10px;
-        max-width: 100%;
-        height: auto;
+        height: 200px;
       }
 
       .icon {
@@ -376,16 +375,26 @@
       .Contact_info hr {
         width: 75%;
       }
-
+      
       .dropdownphone {
         display: none;
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #4e4747;
+        background-color: #004445;
         min-width: 100%;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1000;
+      }
+      .dropdownphone a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+      .dropdownphone a.active{
+        background-color: #f8b400;
       }
 
       .dropmenu.dropdown-content {
@@ -412,10 +421,9 @@
         width: 510px;
         background-color: #4e4747;
       }
-      .line{
+      .line span{
         font-size: 15px;
-        margin-bottom: 10px;
-        height: 55px;
+        height: 60px;
       }
 
     }
@@ -466,11 +474,11 @@
     <div class="gallery">
       <a href="Sgrada1.html" class="image-container">
         <img src="sgrada 1.jpg" alt="mazna" width="600" height="600">
-        <div class="line"><span style="font-weight: bold;">кв. Лъджене, ул. "Свети Никола" 1, 4600 Велинград</span></div>
+        <div class="line" align="center"><span style="font-weight: bold;">кв. Лъджене<br> ул. "Свети Никола" 1, 4600 Велинград</span></div>
       </a>
       <a href="Sgrada2.html" class="image-container">
         <img src="sgrada 2.jpg" alt="perry" width="600" height="600">
-        <div class="line"><span style="font-weight: bold;">кв. Чепино, ул. "Свети Димитър" 8, 4600 Велинград</span></div>
+        <div class="line" align="center"><span style="font-weight: bold;">кв. Чепино<br> ул. "Свети Димитър" 8, 4600 Велинград</span></div>
       </a>
     </div>
 
